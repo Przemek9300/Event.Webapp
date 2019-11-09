@@ -1,14 +1,15 @@
 <div class="p-grid">
-  <div class="p-col-12 top-menu">
-    Menu
+  <div class="p-col-12">
+    <p-menubar [model]="items"></p-menubar>
   </div>
   <div class="p-col-12 ">
     <div class="p-grid ">
-      <div class="p-col-2 sidemenu">
-        SIDEMENU
+      <div class="p-col-2">
+        <p-panelMenu [model]="items"></p-panelMenu>
+
       </div>
 
-      <div class="p-col-10  p-col-align-center content">
+      <div class="p-col-10">
         <router-outlet></router-outlet>
 
       </div>
