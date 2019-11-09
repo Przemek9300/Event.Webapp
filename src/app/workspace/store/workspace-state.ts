@@ -1,10 +1,14 @@
 import { EventState, eventReducer } from "./event/reducer";
 import { RoomState, roomReducer } from "./room/reducer";
-import { ActionReducerMap } from "@ngrx/store";
+import {
+  ActionReducerMap,
+  createFeatureSelector,
+  createSelector
+} from "@ngrx/store";
 
 export const workspaceFeatureKey = "workspace";
 
-interface WorkspaceState {
+export interface WorkspaceState {
   event: EventState;
   room: RoomState;
 }

@@ -1,6 +1,7 @@
 import { createReducer, on } from "@ngrx/store";
 import { Action } from "@fullcalendar/core";
 import { getEvents, getEventsSuccess, getEventsFail } from "./actions";
+import { Event } from "src/app/models/event";
 
 export interface EventState {
   events: Event[];
@@ -8,7 +9,16 @@ export interface EventState {
 }
 
 const initialState: EventState = {
-  events: [],
+  events: [
+    {
+      title: "First",
+      end: "2019-11-11",
+      start: "2019-11-11",
+      id: "1",
+      roomId: "1"
+
+    }
+  ],
   isLoading: false
 };
 

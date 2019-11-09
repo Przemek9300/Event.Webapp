@@ -9,7 +9,7 @@ export interface RoomState {
 }
 
 const initialState: RoomState = {
-  rooms: [],
+  rooms: [{id:"1",name:"Mercury",size:12}],
   isLoading: false
 };
 
