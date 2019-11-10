@@ -1,10 +1,10 @@
-import { User } from './user';
+import { Member } from './user';
 
 export interface Event {
   id: string;
   roomId: string;
   title: string;
-  members: User[]
+  members: Member[]
   description?: string;
   image?: string;
   start: string;

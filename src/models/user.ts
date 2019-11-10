@@ -1,6 +1,14 @@
-export interface User{
+export interface Member{
     id:string
     email:string,
-    avatar:string
-    token?:string
+    avatar:string,
+    token?:string,
+    status?: Status
+}
+
+enum Status {
+    Invited = "Invited",
+    Accepted = "Accepted",
+    Declined =  "Declined"
+
 }
