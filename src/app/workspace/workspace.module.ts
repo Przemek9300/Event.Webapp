@@ -11,6 +11,9 @@ import { CalendaryComponent } from 'src/app/workspace/event-manager/components/c
 import { ListRoomComponent } from './event-manager/components/list-room/list-room.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardComponent } from './dashboard/card/card.component';
+import { EventEffects } from './store/event/effects';
+import { EffectsModule } from '@ngrx/effects';
+import { RoomEffects } from './store/room/effects';
 
 @NgModule({
   declarations: [WorkspaceComponent, EventManagerComponent, CalendaryComponent, ListRoomComponent, DashboardComponent, CardComponent],
@@ -18,7 +21,8 @@ import { CardComponent } from './dashboard/card/card.component';
     CommonModule,
     WorkspaceRoutingModule,
     SharedModule,
-    StoreModule.forFeature(workspaceFeatureKey, workspaceReducers)
+    StoreModule.forFeature(workspaceFeatureKey, workspaceReducers),
+    EffectsModule.forFeature([EventEffects,RoomEffects])
   ],
 })
 export class WorkspaceModule { }
