@@ -14,9 +14,11 @@ import { CardComponent } from './dashboard/card/card.component';
 import { EventEffects } from './store/event/effects';
 import { EffectsModule } from '@ngrx/effects';
 import { RoomEffects } from './store/room/effects';
+import { DetailsComponent } from './dashboard/details/details.component';
+import { ChartComponent } from './dashboard/details/chart/chart.component';
 
 @NgModule({
-  declarations: [WorkspaceComponent, EventManagerComponent, CalendaryComponent, ListRoomComponent, DashboardComponent, CardComponent],
+  declarations: [WorkspaceComponent, EventManagerComponent, CalendaryComponent, ListRoomComponent, DashboardComponent, CardComponent, DetailsComponent, ChartComponent],
   imports: [
     CommonModule,
     WorkspaceRoutingModule,

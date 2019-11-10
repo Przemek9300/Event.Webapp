@@ -36,7 +36,7 @@
               "node_modules/@fullcalendar/timegrid/main.css",
               "node_modules/primeflex/primeflex.css"
             ],
-            "scripts": []
+            "scripts": [    "node_modules/chart.js/dist/Chart.js"]
           },
           "configurations": {
             "production": {

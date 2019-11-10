@@ -1,0 +1,19 @@
+<div class="p-grid p-justify-center" *ngIf="event">
+
+  <div class="header p-col-6">
+    <app-chart></app-chart>
+  </div>
+  <div class="header p-col-6">
+    <h2> {{event.title | uppercase}} </h2>
+    <p> {{event.start | date:"dd:mm:y"}}</p>
+    <p> {{event.start | date:"h:mm"}}-{{event.end | date:"h:mm"}}</p>
+    <div class=" p-grid members">
+        <li class="p-col-2" *ngFor="let member of event.members">
+          <img class="avatar" src="{{member.avatar}}" alt="" srcset="">
+        </li>
+   
+     </div>
+  </div>
+
+
+</div>

@@ -20,7 +20,10 @@ export class SideMenuComponent implements OnInit {
     this.items = [
       { label: "Dashboard", class: [], link: "" , icon:"pi pi-home" },
       { label: "Planning", class: [], link: "planning", icon:"pi pi-clock" },
-      { label: "Users", class: [], link: "planning", icon:"pi pi-chart-bar" }
+      { label: "Users", class: [], link: "planning", icon:"pi pi-chart-bar" },
+      { label: "Users", class: [], link: "planning", icon:"pi pi-star" },
+      { label: "Users", class: [], link: "planning", icon:"pi pi-users" },
+      { label: "Users", class: [], link: "planning", icon:"pi pi-compass" }
     ];
   }
 }
