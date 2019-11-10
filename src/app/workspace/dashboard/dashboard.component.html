@@ -1,0 +1,8 @@
+<div class="p-grid p-align-center p-justify-center ">
+    
+  <div class="p-col-2 p-offset-1" *ngFor="let event of events$ | async">
+    <app-card [event]="event">
+    </app-card>
+
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="header p-grid p-justify-center">
+    <h2> {{event.title | uppercase}}</h2>
+
+  </div>
+  <div class="p-grid p-justify-center">
+    <img class="image-event" src="{{event.image}}" alt="" srcset="">
+  </div>
+  <div class="members  p-grid p-justify-center">
+    <h1>{{event.start | date}}</h1>
+
+  </div>
+  <div class="members  p-grid p-justify-center">
+    <p>{{event.start | date:"h:mm"}}</p>
+
+  </div>
+
+  <div class="members  p-grid p-justify-center">
+    <p>Members:{{event.members.length}}</p>
+  </div>
+  <div class="bottom p-grid p-justify-center">
+    <button class="blue-button">GOING</button>
+  </div>
+</div>
