@@ -9,9 +9,10 @@ import { StoreModule } from '@ngrx/store';
 import { workspaceReducers, workspaceFeatureKey } from './store/workspace-state';
 import { CalendaryComponent } from 'src/app/workspace/event-manager/components/calendary/calendary.component';
 import { ListRoomComponent } from './event-manager/components/list-room/list-room.component';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [WorkspaceComponent, EventManagerComponent, CalendaryComponent, ListRoomComponent],
+  declarations: [WorkspaceComponent, EventManagerComponent, CalendaryComponent, ListRoomComponent, DashboardComponent],
   imports: [
     CommonModule,
     WorkspaceRoutingModule,

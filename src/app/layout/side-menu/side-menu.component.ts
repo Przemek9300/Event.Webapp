@@ -18,9 +18,9 @@ export class SideMenuComponent implements OnInit {
 
   ngOnInit() {
     this.items = [
-      { label: "Dashboard", class: [], link: "workspace/dashboard" , icon:"pi pi-home" },
-      { label: "Planning", class: [], link: "workspace/planning", icon:"pi pi-clock" },
-      { label: "Users", class: [], link: "workspace/planning", icon:"pi pi-users" }
+      { label: "Dashboard", class: [], link: "" , icon:"pi pi-home" },
+      { label: "Planning", class: [], link: "planning", icon:"pi pi-clock" },
+      { label: "Users", class: [], link: "planning", icon:"pi pi-users" }
     ];
   }
 }
