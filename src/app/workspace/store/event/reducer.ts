@@ -12,10 +12,16 @@ const initialState: EventState = {
   events: [
     {
       title: "First",
-      end: "2019-11-11",
       start: "2019-11-11",
+      end: "2019-11-11",
       id: "1",
-      roomId: "1"
+      roomId: "1",
+      backgroundColor:"#222222",
+      borderColor:"#008F68",
+      textColor:"#00ff00",
+      description: "dupa",
+      image: "/",
+      url: "https://wwww.wp.pl"
 
     }
   ],

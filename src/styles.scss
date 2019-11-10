@@ -1,12 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
-$c1:#222222;
-$c2:#D11250;
-$c3:#DB5800;
-$c4:#006899;
-$c5:#008F68;
+$c1:#201F1F;
+$c2:#313130;
+$c3:#292827;
+$c4:#008F68;
 
+$hover:#61A8FF;
+$font: #F4F4F4;
 
 
 body {
-    background-color: $c1
-  }
+    background-color: $c1;
+    color:$font;
+    font-family: 'Crimson Text', serif;  }

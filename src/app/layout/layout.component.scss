@@ -1,16 +1,18 @@
 @import "../../styles.scss";
 
 .top-menu{
-    background: $c3;
+    background: #292827;
 }
 
 
 .sidemenu{
-    background: $c2;
+    background: #313130;
+    width:  60px;
+    height: 100vh
 
 }
 
 .content{
-    background: $c4;
+    margin:40px
 
 }

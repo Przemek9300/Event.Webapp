@@ -8,11 +8,12 @@ import { LayoutComponent } from "./layout/layout.component";
 
 import { SharedModule } from "src/shared/shared.module";
 import { StoreModule } from "@ngrx/store";
-import { reducers, metaReducers } from "./reducers";
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { SideMenuComponent } from './side-menu/side-menu.component';
+import { TopMenuComponent } from './top-menu/top-menu.component';
 @NgModule({
-  declarations: [AppComponent, LayoutComponent],
+  declarations: [AppComponent, LayoutComponent, SideMenuComponent, TopMenuComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let item of items">
+       <a [routerLink]='item.link' [ngClass]="item.class"> <i [ngClass]="item.icon"></i></a>
+    </li>
+</ul>
