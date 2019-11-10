@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Room } from 'src/app/models/room';
+import { Room } from 'src/models/room';
 
 @Component({
   selector: 'app-list-room',

@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { Event } from 'src/app/models/event';
+import { Event } from 'src/models/event';
 
 export const getEvents = createAction("Get All Events");
 export const getEventsFail = createAction("Get All Events Fail");

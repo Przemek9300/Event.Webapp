@@ -1,7 +1,7 @@
 import { createReducer, on } from "@ngrx/store";
 import { Action } from "@fullcalendar/core";
 import { getEvents, getEventsSuccess, getEventsFail } from "./actions";
-import { Event } from "src/app/models/event";
+import { Event } from "src/models/event";
 
 export interface EventState {
   events: Event[];

@@ -4,8 +4,8 @@ import { Store } from "@ngrx/store";
 import { WorkspaceState } from "../store/workspace-state";
 import { selectEvent, selectRoom } from "../store/selectors";
 import { Observable } from "rxjs";
-import { Event } from "src/app/models/event";
-import { Room } from 'src/app/models/room';
+import { Event } from "src/models/event";
+import { Room } from 'src/models/room';
 @Component({
   selector: "app-event-manager",
   templateUrl: "./event-manager.component.html",

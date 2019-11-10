@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MyUser } from '../../models/myUser';
+import { MyUser } from '../../../models/myUser';
 
 @Component({
   selector: 'app-top-menu',
