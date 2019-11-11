@@ -1,0 +1,168 @@
+{
+  "events": [{
+      "title": "First",
+      "start": "2019-11-11T14:30",
+      "end": "2019-11-11T18:00",
+      "members": [],
+      "id": "1",
+      "roomId": "1",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, perspiciatis esse dolores iste commodi dolore reiciendis quasi nulla error doloribus voluptatibus provident similique aut illum architecto autem nam facilis ad!",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/NGC_7293.jpg/220px-NGC_7293.jpg",
+      "url": "https://google.pl"
+    },
+    {
+      "title": "Event",
+      "start": "2019-11-12T14:30",
+      "end": "2019-11-12T18:00",
+      "members": [{
+        "id": "1",
+        "email": "example@gmail.com",
+        "avatar": "https://cdn4.iconfinder.com/data/icons/user-avatar-flat-icons/512/User_Avatar-04-512.png",
+        "status": "Accepted"
+      }, {
+        "id": "2",
+        "email": "example2@gmail.com",
+        "avatar": "https://icon-library.net/images/icon-avatar/icon-avatar-6.jpg",
+        "status": "Accepted"
+      }, {
+        "id": "3",
+        "email": "example2@gmail.com",
+        "avatar": "https://cdn4.iconfinder.com/data/icons/user-avatar-flat-icons/512/User_Avatar-04-512.png",
+        "status": "Accepted"
+      }, {
+        "id": "4",
+        "email": "example2@gmail.com",
+        "avatar": "https://cdn4.iconfinder.com/data/icons/user-avatar-flat-icons/512/User_Avatar-04-512.png",
+        "status": "Declined"
+      }, {
+        "id": "5",
+        "email": "example2@gmail.com",
+        "avatar": "https://cdn4.iconfinder.com/data/icons/user-avatar-flat-icons/512/User_Avatar-04-512.png",
+        "status": "Invited"
+      }, {
+        "id": "6",
+        "email": "example2@gmail.com",
+        "avatar": "https://icon-library.net/images/icon-avatar/icon-avatar-6.jpg",
+        "status": "Accepted"
+      },{
+        "id": "1",
+        "email": "example@gmail.com",
+        "avatar": "https://cdn4.iconfinder.com/data/icons/user-avatar-flat-icons/512/User_Avatar-04-512.png",
+        "status": "Accepted"
+      }, {
+        "id": "2",
+        "email": "example2@gmail.com",
+        "avatar": "https://icon-library.net/images/icon-avatar/icon-avatar-6.jpg",
+        "status": "Accepted"
+      }, {
+        "id": "3",
+        "email": "example2@gmail.com",
+        "avatar": "https://cdn4.iconfinder.com/data/icons/user-avatar-flat-icons/512/User_Avatar-04-512.png",
+        "status": "Accepted"
+      }, {
+        "id": "4",
+        "email": "example2@gmail.com",
+        "avatar": "https://cdn4.iconfinder.com/data/icons/user-avatar-flat-icons/512/User_Avatar-04-512.png",
+        "status": "Declined"
+      }, {
+        "id": "5",
+        "email": "example2@gmail.com",
+        "avatar": "https://cdn4.iconfinder.com/data/icons/user-avatar-flat-icons/512/User_Avatar-04-512.png",
+        "status": "Invited"
+      }, {
+        "id": "6",
+        "email": "example2@gmail.com",
+        "avatar": "https://icon-library.net/images/icon-avatar/icon-avatar-6.jpg",
+        "status": "Accepted"
+      },{
+        "id": "1",
+        "email": "example@gmail.com",
+        "avatar": "https://cdn4.iconfinder.com/data/icons/user-avatar-flat-icons/512/User_Avatar-04-512.png",
+        "status": "Accepted"
+      }, {
+        "id": "2",
+        "email": "example2@gmail.com",
+        "avatar": "https://icon-library.net/images/icon-avatar/icon-avatar-6.jpg",
+        "status": "Accepted"
+      }, {
+        "id": "3",
+        "email": "example2@gmail.com",
+        "avatar": "https://cdn4.iconfinder.com/data/icons/user-avatar-flat-icons/512/User_Avatar-04-512.png",
+        "status": "Accepted"
+      }, {
+        "id": "4",
+        "email": "example2@gmail.com",
+        "avatar": "https://cdn4.iconfinder.com/data/icons/user-avatar-flat-icons/512/User_Avatar-04-512.png",
+        "status": "Declined"
+      }, {
+        "id": "5",
+        "email": "example2@gmail.com",
+        "avatar": "https://cdn4.iconfinder.com/data/icons/user-avatar-flat-icons/512/User_Avatar-04-512.png",
+        "status": "Invited"
+      }, {
+        "id": "6",
+        "email": "example2@gmail.com",
+        "avatar": "https://icon-library.net/images/icon-avatar/icon-avatar-6.jpg",
+        "status": "Accepted"
+      }],
+      "id": "2",
+      "roomId": "1",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, perspiciatis esse dolores iste commodi dolore reiciendis quasi nulla error doloribus voluptatibus provident similique aut illum architecto autem nam facilis ad!",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/NGC_7293.jpg/220px-NGC_7293.jpg",
+      "url": "https://google.pl"
+    },
+    {
+      "title": "First",
+      "start": "2019-11-11T18:15",
+      "end": "2019-11-11T20:00",
+      "members": [],
+      "id": "3",
+      "roomId": "1",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, perspiciatis esse dolores iste commodi dolore reiciendis quasi nulla error doloribus voluptatibus provident similique aut illum architecto autem nam facilis ad!",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/NGC_7293.jpg/220px-NGC_7293.jpg",
+      "url": "https://google.pl"
+    },
+    {
+      "title": "First",
+      "start": "2019-11-11T08:30",
+      "end": "2019-11-11T12:00",
+      "members": [],
+      "id": "4",
+      "roomId": "1",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, perspiciatis esse dolores iste commodi dolore reiciendis quasi nulla error doloribus voluptatibus provident similique aut illum architecto autem nam facilis ad!",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/NGC_7293.jpg/220px-NGC_7293.jpg",
+      "url": "https://google.pl"
+    }
+  ],
+
+  "rooms": [{
+      "id": "1",
+      "name": "Mercury",
+      "size": 5
+    },
+    {
+      "id": "2",
+      "name": "Wenus",
+      "size": 50
+    },
+    {
+      "id": "3",
+      "name": "Jupyter",
+      "size": 25
+    },
+    {
+      "id": "4",
+      "name": "Earth",
+      "size": 30
+    },
+    {
+      "id": "5",
+      "name": "Saturn",
+      "size": 15
+    }
+
+
+
+
+  ]
+}

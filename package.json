@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "fake": "json-server -p 5000 --watch ./src/fake-backend/db.json"
   },
   "private": true,
   "dependencies": {
@@ -28,6 +29,7 @@
     "@ngrx/store": "^8.5.0",
     "@ngrx/store-devtools": "^8.5.0",
     "chart.js": "^2.9.2",
+    "json-server": "^0.15.1",
     "ngx-qrcode2": "0.0.9",
     "primeflex": "^1.0.0",
     "primeicons": "^2.0.0",
