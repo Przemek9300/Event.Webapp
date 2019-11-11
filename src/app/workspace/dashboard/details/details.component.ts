@@ -5,6 +5,7 @@ import { selectEventById } from "../../store/selectors";
 import { Observable } from "rxjs";
 import { Event } from "src/models/event";
 import { ActivatedRoute } from "@angular/router";
+import { Member, Status } from 'src/models/member';
 
 @Component({
   selector: "app-details",
@@ -24,4 +25,13 @@ export class DetailsComponent implements OnInit {
       .select(selectEventById, { id: this.route.snapshot.paramMap.get("id") })
       .subscribe(event => (this.event = event));
   }
+  public statusClass(member:Member){
+    return {
+      "accepted-status" : member.status === Status.Accepted,
+      "invited-status" : member.status === Status.Invited,
+      "declined-status" : member.status === Status.Declined
+
+    }
+  }
+  
 }

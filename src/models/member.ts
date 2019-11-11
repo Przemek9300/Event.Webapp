@@ -3,10 +3,10 @@ export interface Member{
     email:string,
     avatar:string,
     token?:string,
-    status?: Status
+    status: Status
 }
 
-enum Status {
+export enum Status {
     Invited = "Invited",
     Accepted = "Accepted",
     Declined =  "Declined"

@@ -1,4 +1,4 @@
-import { Member } from './user';
+import { Member } from './member';
 
 export interface Event {
   id: string;

@@ -9,7 +9,9 @@
     <p> {{event.start | date:"h:mm"}}-{{event.end | date:"h:mm"}}</p>
     <div class=" p-grid members">
         <li class="p-col-2" *ngFor="let member of event.members">
-          <img class="avatar" src="{{member.avatar}}" alt="" srcset="">
+          <img [ngClass]="statusClass(member)" class="avatar" src="{{member.avatar}}" alt="" srcset="">
+          {{member.status}}
+
         </li>
    
      </div>

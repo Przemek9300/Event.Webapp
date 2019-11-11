@@ -5,3 +5,14 @@ li{
     height: 90px;
     width: 90px;
 }
+.accepted-status{
+    border: 1px solid greenyellow;
+}
+.invited-status{
+    border: 1px solid gray;
+}
+.declined-status{
+    opacity: 0.2;
+    border: 1px solid red;
+
+}
