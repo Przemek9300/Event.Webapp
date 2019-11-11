@@ -1,4 +1,4 @@
-<div [routerLink]="[event.id, 'details']"  class="card">
+<!-- <div [routerLink]="[event.id, 'details']"  class="card">
   <div class="header p-grid p-justify-center">
     <h2> {{event.title | uppercase}}</h2>
 
@@ -22,3 +22,21 @@
     <button class="blue-button">GOING</button>
   </div>
 </div>
+ -->
+
+
+<p-card [routerLink]="[event.id, 'details']" class="card" header="{{event.title}}"
+  subheader="" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+  <p-header class="p-grid">
+    <i class="p-col-6 pi pi-user">{{event.members.length}}</i>
+    <i class="p-col-6  pi pi-calendar">{{event.start | date:'short'}}</i>
+    <img class="p-col-12" src="Card" src="{{event.image}}">
+
+
+  </p-header>
+  <div>{{event.description}}</div>
+  <p-footer>
+    <button class="blue-button">GOING</button>
+
+  </p-footer>
+</p-card>

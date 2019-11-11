@@ -15,6 +15,7 @@ import { Member, Status } from 'src/models/member';
 export class DetailsComponent implements OnInit {
   public event: Event;
   public data: any;
+  ngxQrcode2 = 'https://www.npmjs.com/package/ngx-qrcode2';
   constructor(
     private store: Store<WorkspaceState>,
     private route: ActivatedRoute

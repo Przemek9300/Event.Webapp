@@ -1,20 +1,30 @@
-<div class="p-grid p-justify-center" *ngIf="event">
+<div class="p-grid p-justify-center details-card" *ngIf="event">
 
   <div class="header p-col-6">
-    <app-chart></app-chart>
+    <ngx-qrcode class="qr " qrc-element-type="url" [qrc-value]="event.url">More information </ngx-qrcode>
+
+    <app-chart [members]="event.members"></app-chart>
   </div>
-  <div class="header p-col-6">
-    <h2> {{event.title | uppercase}} </h2>
-    <p> {{event.start | date:"dd:mm:y"}}</p>
-    <p> {{event.start | date:"h:mm"}}-{{event.end | date:"h:mm"}}</p>
-    <div class=" p-grid members">
-        <li class="p-col-2" *ngFor="let member of event.members">
-          <img [ngClass]="statusClass(member)" class="avatar" src="{{member.avatar}}" alt="" srcset="">
-          {{member.status}}
+  <div class="header p-col-3 ">
+    <div class="p-grid ">
+      <h1 class="p-col-12"> {{event.title | uppercase}} </h1>
+      <img class="event-image p-col-6" src="{{event.image}}" alt="" srcset="">
+
+      <h2 class="p-col-12"> {{event.start | date:"long"}}</h2>
+      <p> {{event.description}}</p>
+      <div class=" p-grid members">
+        <h3 class="p-col-12">Members:</h3>
+
+
+        <li class="p-col-4 p-grid" *ngFor="let member of event.members">
+          <img class="p-col-12" [ngClass]="statusClass(member)" class="avatar" src="{{member.avatar}}" alt="" srcset="">
+          <b class="p-col-12">{{member.status}}</b>
 
         </li>
-   
-     </div>
+        <h3 class="p-col-12">Total:{{event.members.length}}</h3>
+
+      </div>
+    </div>
   </div>
 
 

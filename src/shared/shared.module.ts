@@ -3,12 +3,30 @@ import { CommonModule } from "@angular/common";
 import { FullCalendarModule } from "primeng/fullcalendar";
 import { PanelMenuModule } from "primeng/panelmenu";
 import { MenubarModule } from "primeng/menubar";
-import {TabMenuModule} from 'primeng/tabmenu';
-import {ChartModule} from 'primeng/chart';
-import {ProgressBarModule} from 'primeng/progressbar';
+import { TabMenuModule } from "primeng/tabmenu";
+import { ChartModule } from "primeng/chart";
+import { ProgressBarModule } from "primeng/progressbar";
+import { CardModule } from "primeng/card";
+import {CarouselModule} from 'primeng/carousel';
+import {ButtonModule} from 'primeng/button';
+import {VirtualScrollerModule} from 'primeng/virtualscroller';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
 @NgModule({
-  imports:[ ],
+  imports: [],
   declarations: [],
-  exports: [CommonModule, FullCalendarModule, PanelMenuModule, MenubarModule,TabMenuModule, ChartModule,ProgressBarModule ]
+  exports: [
+    CommonModule,
+    FullCalendarModule,
+    PanelMenuModule,
+    MenubarModule,
+    TabMenuModule,
+    ChartModule,
+    ProgressBarModule,
+    CardModule,
+    CarouselModule,
+    ButtonModule,
+    VirtualScrollerModule,
+    NgxQRCodeModule
+  ]
 })
 export class SharedModule {}

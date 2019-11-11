@@ -1,33 +1,34 @@
 @import "../../../../styles.scss";
 
-.header{
-    width: 100%;
+.header {
 }
-.card{
-    background: $c2;
-    cursor: pointer;
- }
- .card:hover{
-    background: $c3;
-    cursor: pointer;
- }
-.blue-button{
-    font-size: 1.25em;
-    
-    width: 100%;
-    height: 50px;
-    background: $c5;
-    border: 0px;
-    color:$font;
-    cursor: pointer;
-    font-weight: bold
+.card {
+  background: $c2;
+  cursor: pointer;
+}
+.card:hover {
+  background: $c3;
+  cursor: pointer;
+}
+.blue-button {
+  font-size: 1.25em;
 
+  width: 100%;
+  height: 50px;
+  background: $c5;
+  border: 0px;
+  color: $font;
+  cursor: pointer;
+  font-weight: bold;
 }
-.blue-button:hover{
-    background: $c4;
+.blue-button:hover {
+  background: $c4;
 }
 
-.image-event{
-    height: 100%;
-    width: 100%
+.image-event {
+  border-radius: 9px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
 }
+

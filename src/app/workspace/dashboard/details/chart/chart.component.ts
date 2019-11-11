@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
+import { Member, Status } from "src/models/member";
 
 @Component({
   selector: "app-chart",
@@ -7,16 +8,21 @@ import { Component, OnInit } from "@angular/core";
 })
 export class ChartComponent implements OnInit {
   public data: any;
+  @Input() members: Member[];
   constructor() {}
 
   ngOnInit() {
     this.data = {
-      labels: ["FREE", "INVITED", "ACCEPTED"],
+      labels: ["ACCEPTED", "INVITED", "DECLINED"],
       datasets: [
         {
-          data: [300, 50, 100],
-          backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
-          hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"]
+          data: [
+            this.members.filter(x => x.status === Status.Accepted).length,
+            this.members.filter(x => x.status === Status.Invited).length,
+            this.members.filter(x => x.status === Status.Declined).length
+          ],
+          backgroundColor: ["#26de81", "#d1d8e0", "#fc5c65"],
+          hoverBackgroundColor: ["#20bf6b", "#a5b1c2", "#eb3b5a"]
         }
       ]
     };
