@@ -35,18 +35,18 @@
     <app-chart [members]="event.members"></app-chart>
   </div>
   <div fxFlex="40">
-    <div class="header ">
-      <div >
-        <h1 > {{event.title | uppercase}} </h1>
-        <img class="event-image p-col-6" src="{{event.image}}" alt="" srcset="">
+    <div >
+      <div   fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="10" fxLayoutAlign="center">
+        <h1  fxFlex="100" > {{event.title | uppercase}} </h1>
+        <img  fxFlex="50" class="event-image p-col-6" src="{{event.image}}" alt="" srcset="">
 
         <h2 > {{event.start | date:"long"}}</h2>
         <p> {{event.description}}</p>
-        <div class=" p-grid members">
-          <h3 >Members:</h3>
+        <div  fxLayout="row wrap" fxLayout.xs="column"  fxLayoutGap="10%" fxLayoutAlign="base-line " >
+          <h3  fxFlex="100%"  >Members:</h3>
 
 
-          <li *ngFor="let member of event.members">
+          <li fxFlex="10%"  *ngFor="let member of event.members">
             <img  [ngClass]="statusClass(member)" class="avatar" src="{{member.avatar}}" alt=""
               srcset="">
             <b >{{member.status}}</b>

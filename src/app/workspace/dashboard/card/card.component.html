@@ -1,47 +1,4 @@
-<!-- <div [routerLink]="[event.id, 'details']"  class="card">
-  <div class="header p-grid p-justify-center">
-    <h2> {{event.title | uppercase}}</h2>
-
-  </div>
-  <div class="p-grid p-justify-center">
-    <img class="image-event" src="{{event.image}}" alt="" srcset="">
-  </div>
-  <div class="members  p-grid p-justify-center">
-    <h1>{{event.start | date}}</h1>
-
-  </div>
-  <div class="members  p-grid p-justify-center">
-    <p>{{event.start | date:"h:mm"}}</p>
-
-  </div>
-
-  <div class="members  p-grid p-justify-center">
-    <p>Members:{{event.members.length}}</p>
-  </div>
-  <div class="bottom p-grid p-justify-center">
-    <button class="blue-button">GOING</button>
-  </div>
-</div>
- -->
-
-
-<!-- <p-card  class="card" header="{{event.title}}"
-  subheader="" [style]="{width: '360px'}" styleClass="ui-card-shadow">
-  <p-header class="p-grid">
-    <i class="p-col-6 pi pi-user">{{event.members.length}}</i>
-    <i class="p-col-6  pi pi-calendar">{{event.start | date:'short'}}</i>
-    <img class="p-col-12" src="Card" src="{{event.image}}">
-
-
-  </p-header>
-  <div>{{event.description}}</div>
-  <p-footer>
-    <button class="blue-button">GOING</button>
-
-  </p-footer>
-</p-card> -->
-
-<mat-card [routerLink]="[event.id, 'details']" class="card">
+<mat-card class="card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>{{event.title | uppercase }}</mat-card-title>
@@ -53,18 +10,20 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button color="primary">
+    <button [routerLink]="[event.id, 'details']" mat-raised-button color="primary">
       <mat-icon>details</mat-icon>
     </button>
 
-    <button mat-raised-button color="primary">
+    <button (click)="inviteClick()" mat-raised-button color="primary">
       <mat-icon>group_add</mat-icon>
     </button>
   </mat-card-actions>
   <mat-card-footer>
-     
-    <p>  <mat-icon>date_range</mat-icon> {{event.start | date:'short'}}  </p>
-  
+
+    <p>
+      <mat-icon>date_range</mat-icon> {{event.start | date:'short'}}
+    </p>
+
 
   </mat-card-footer>
 </mat-card>

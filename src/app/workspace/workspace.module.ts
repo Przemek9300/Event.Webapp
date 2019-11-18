@@ -18,9 +18,11 @@ import { DetailsComponent } from './dashboard/details/details.component';
 import { ChartComponent } from './dashboard/details/chart/chart.component';
 import { MaterialModule } from '../material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { InviteFormComponent } from './invite-form/invite-form.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [WorkspaceComponent, EventManagerComponent, CalendaryComponent, ListRoomComponent, DashboardComponent, CardComponent, DetailsComponent, ChartComponent],
+  declarations: [WorkspaceComponent, EventManagerComponent, CalendaryComponent, ListRoomComponent, DashboardComponent, CardComponent, DetailsComponent, ChartComponent, InviteFormComponent],
   imports: [
     CommonModule,
     WorkspaceRoutingModule,
@@ -28,7 +30,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     StoreModule.forFeature(workspaceFeatureKey, workspaceReducers),
     EffectsModule.forFeature([EventEffects,RoomEffects]),
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ReactiveFormsModule,
+    FormsModule
+
   ],
+  entryComponents:[InviteFormComponent]
 })
 export class WorkspaceModule { }
