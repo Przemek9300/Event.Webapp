@@ -1,5 +1,9 @@
-<ul>
-    <li *ngFor="let item of items">
-       <a [routerLink]='item.link' [ngClass]="item.class"> <i [ngClass]="item.icon"></i></a>
-    </li>
+<ul class="container" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="10">
+  <li [routerLink]='item.link' [ngClass]="{'active': item.link == currentPath }" fxFlex="100" color="primary"
+    *ngFor="let item of items">
+    <div class="container"  fxFlex="100" fxLayout="row" fxLayoutGap="50">
+      <mat-icon  fxFlex="50" class="nav-item">{{item.icon}}</mat-icon>
+      <p  fxFlex="50">{{item.label}}</p>
+    </div>
+  </li>
 </ul>

@@ -1,22 +1,38 @@
 @import "../../../styles.scss";
 
-ul {
+ul{
+  margin: 0px;
   padding: 0px;
+
 }
+
 li {
   list-style: none;
-  margin: 30px 0px 0px auto;
   cursor: pointer;
+  margin-top: 15%;
+  min-width: 200px;
 }
 li:first-child {
   margin-top: 100px;
 }
+li:hover {
+  background: #3F51B5;
+}
+
 a {
   color: aliceblue;
 }
 i {
-  font-size: 2.25em;
+  font-size: 1.0em;
+  vertical-align:middle;
 }
 a:hover {
-  color: $hover;
+  color: aliceblue;
+}
+.active{
+  background: #3F51B5;
+}
+.nav-item{
+  font-size: 2rem;
+  text-align: center;
 }

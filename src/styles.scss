@@ -8,7 +8,7 @@ $hover:#61A8FF;
 $font: #F4F4F4;
 
 
-body {
-    background-color: $c1;
-    color:$font;
-    font-family: 'Crimson Text', serif;  }
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

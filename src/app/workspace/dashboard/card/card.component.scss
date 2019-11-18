@@ -1,13 +1,8 @@
 @import "../../../../styles.scss";
 
-.header {
-}
-.card {
-  background: $c2;
-  cursor: pointer;
-}
+
+
 .card:hover {
-  background: $c3;
   cursor: pointer;
 }
 .blue-button {
@@ -15,7 +10,6 @@
 
   width: 100%;
   height: 50px;
-  background: $c5;
   border: 0px;
   color: $font;
   cursor: pointer;
@@ -32,3 +26,6 @@
   height: auto;
 }
 
+.card{
+  margin-top: 50px;
+}

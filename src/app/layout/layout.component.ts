@@ -6,10 +6,13 @@ import {MenuItem} from 'primeng/api';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
+  opened: boolean;
 
   constructor() { }
 
   ngOnInit() {
   }
-
+ public handleClick(){
+   this.opened = !this.opened
+ }
 }

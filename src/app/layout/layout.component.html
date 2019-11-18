@@ -1,4 +1,4 @@
-<div class="p-grid">
+<!-- <div class="p-grid">
   <div class="p-col-12 top-menu ">
    <app-top-menu> </app-top-menu>
   </div>
@@ -16,6 +16,28 @@
     </div>
 
   </div>
-</div>
+</div> -->
 <!-- TODO -->
 <!-- <p-progressBar  [style]="{'height': '6px'}" mode="indeterminate" ></p-progressBar> -->
+
+<!-- Creates a layout with a left-positioned sidenav and explicit content. -->
+<mat-toolbar color="primary">
+  <button (click)="handleClick()" mat-icon-button>
+
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>EVENT</span>
+
+
+</mat-toolbar>
+<mat-sidenav-container >
+  <mat-sidenav [(opened)]="opened">
+    <app-side-menu></app-side-menu>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+
+</mat-sidenav-container>

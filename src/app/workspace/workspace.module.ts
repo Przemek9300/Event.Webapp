@@ -16,6 +16,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { RoomEffects } from './store/room/effects';
 import { DetailsComponent } from './dashboard/details/details.component';
 import { ChartComponent } from './dashboard/details/chart/chart.component';
+import { MaterialModule } from '../material/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [WorkspaceComponent, EventManagerComponent, CalendaryComponent, ListRoomComponent, DashboardComponent, CardComponent, DetailsComponent, ChartComponent],
@@ -24,7 +26,9 @@ import { ChartComponent } from './dashboard/details/chart/chart.component';
     WorkspaceRoutingModule,
     SharedModule,
     StoreModule.forFeature(workspaceFeatureKey, workspaceReducers),
-    EffectsModule.forFeature([EventEffects,RoomEffects])
+    EffectsModule.forFeature([EventEffects,RoomEffects]),
+    MaterialModule,
+    FlexLayoutModule
   ],
 })
 export class WorkspaceModule { }

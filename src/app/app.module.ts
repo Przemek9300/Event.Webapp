@@ -11,12 +11,18 @@ import { StoreModule } from "@ngrx/store";
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { SideMenuComponent } from './layout/side-menu/side-menu.component';
-import { TopMenuComponent } from './layout/top-menu/top-menu.component';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 
+
+import {MatCheckboxModule} from '@angular/material/checkbox'; 
+
+
+import { MaterialModule } from './material/material.module';
+import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from "@angular/flex-layout";
 @NgModule({
-  declarations: [AppComponent, LayoutComponent, SideMenuComponent, TopMenuComponent],
+  declarations: [AppComponent, LayoutComponent, SideMenuComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -25,7 +31,12 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModule,
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([])
+    FlexLayoutModule,
+    EffectsModule.forRoot([]),
+    MaterialModule,
+    MatCheckboxModule,
+    FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
