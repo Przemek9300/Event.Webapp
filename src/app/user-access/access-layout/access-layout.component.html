@@ -1,5 +1,6 @@
   <div class="container" fxLayout="column" fxLayout.xs="column" fxLayoutGap="20" fxLayoutAlign="center center">
-    <div class="card">
+    <h1>Event Manager</h1>
+    <mat-card class="card">
       <nav mat-tab-nav-bar>
         <a mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.link" routerLinkActive #rla="routerLinkActive"
           [active]="rla.isActive">
@@ -7,6 +8,6 @@
         </a>
       </nav>
       <router-outlet></router-outlet>
-    </div>
+    </mat-card >
 
   </div>
