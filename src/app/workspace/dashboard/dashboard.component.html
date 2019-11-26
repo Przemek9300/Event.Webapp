@@ -1,6 +1,5 @@
-
-  <div class="container" fxLayout="row wrap" fxLayout.xs="column"  fxLayoutGap="1%" fxLayoutAlign="center" >
-    <app-card fxFlex="30%" *ngFor="let event of events$ | async" [event]="event">
-    </app-card>
-  </div>
-
+<div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="1%" fxLayoutAlign="space-evenly center">
+  <app-card fxFlex="30%" *ngFor="let event of events$ | async" [event]="event">
+  </app-card>
+  <app-empty-card fxFlex="30%"></app-empty-card>
+</div>

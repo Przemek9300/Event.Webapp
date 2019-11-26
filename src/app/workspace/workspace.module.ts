@@ -20,9 +20,10 @@ import { MaterialModule } from '../material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { InviteFormComponent } from './invite-form/invite-form.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { EmptyCardComponent } from './dashboard/empty-card/empty-card.component';
 
 @NgModule({
-  declarations: [WorkspaceComponent, EventManagerComponent, CalendaryComponent, ListRoomComponent, DashboardComponent, CardComponent, DetailsComponent, ChartComponent, InviteFormComponent],
+  declarations: [WorkspaceComponent, EventManagerComponent, CalendaryComponent, ListRoomComponent, DashboardComponent, CardComponent, DetailsComponent, ChartComponent, InviteFormComponent, EmptyCardComponent],
   imports: [
     CommonModule,
     WorkspaceRoutingModule,
