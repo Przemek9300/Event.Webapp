@@ -1,16 +1,20 @@
 <mat-card class="card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>{{event.title | uppercase }}</mat-card-title>
+    <mat-card-title>{{ event.event_name | uppercase }}</mat-card-title>
   </mat-card-header>
-  <img mat-card-image src="{{event.image}}" alt="{{event.title}}">
+  <img mat-card-image src="{{ event.image }}" alt="{{ event.title }}" />
   <mat-card-content>
     <p>
-      {{event.description}}
+      {{ event.description }}
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button [routerLink]="[event.id, 'details']" mat-raised-button color="primary">
+    <button
+      [routerLink]="[event.id, 'details']"
+      mat-raised-button
+      color="primary"
+    >
       <mat-icon>details</mat-icon>
     </button>
 
@@ -19,11 +23,8 @@
     </button>
   </mat-card-actions>
   <mat-card-footer>
-
     <p>
-      <mat-icon>date_range</mat-icon> {{event.start | date:'short'}}
+      <mat-icon>date_range</mat-icon> {{ event.start_time | date: "short" }}
     </p>
-
-
   </mat-card-footer>
 </mat-card>

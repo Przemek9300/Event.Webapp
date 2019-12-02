@@ -8,19 +8,18 @@ import { LayoutComponent } from "./layout/layout.component";
 
 import { SharedModule } from "src/shared/shared.module";
 import { StoreModule } from "@ngrx/store";
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment';
-import { SideMenuComponent } from './layout/side-menu/side-menu.component';
-import { EffectsModule } from '@ngrx/effects';
-import { HttpClientModule } from '@angular/common/http';
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { environment } from "../environments/environment";
+import { SideMenuComponent } from "./layout/side-menu/side-menu.component";
+import { EffectsModule } from "@ngrx/effects";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
+import { MatCheckboxModule } from "@angular/material/checkbox";
 
-import {MatCheckboxModule} from '@angular/material/checkbox'; 
-
-
-import { MaterialModule } from './material/material.module';
-import { FormsModule } from '@angular/forms';
+import { MaterialModule } from "./material/material.module";
+import { FormsModule } from "@angular/forms";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { TokenInterceptor } from "./user-access/services/token.interceptor";
 @NgModule({
   declarations: [AppComponent, LayoutComponent, SideMenuComponent],
   imports: [
@@ -30,15 +29,23 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     AppRoutingModule,
     SharedModule,
     StoreModule.forRoot({}),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production
+    }),
     FlexLayoutModule,
     EffectsModule.forRoot([]),
     MaterialModule,
     MatCheckboxModule,
     FormsModule
-    
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

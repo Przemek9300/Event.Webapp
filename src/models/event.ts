@@ -1,16 +1,12 @@
-import { Member } from './member';
+import { Member } from "./member";
 
 export interface Event {
-  id: string;
-  roomId: string;
-  title: string;
-  members: Member[]
-  description?: string;
-  image?: string;
-  start: string;
-  end: string;
-  url?: string;
-  backgroundColor?: string;
-  borderColor?: string;
-  textColor?: string;
+  id: number;
+  url: string;
+  event_name: string;
+  owner: number;
+  client: number[];
+  start_time: Date;
+  end_time: Date;
+  image: string;
 }

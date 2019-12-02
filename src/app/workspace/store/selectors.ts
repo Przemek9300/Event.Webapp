@@ -10,10 +10,8 @@ export const selectEvent = createSelector(
   selectFeature,
   state => state.event.events
 );
-export const selectEventById = createSelector(
-  selectEvent,
-  (state, props) => state.filter(x => x.id === props.id)[0]
-);
+export const selectEventById = (id: number) =>
+  createSelector(selectEvent, state => state.filter(x => x.id === id)[0]);
 
 export const selectRoom = createSelector(
   selectFeature,
@@ -24,8 +22,10 @@ export const selectRoomById = createSelector(
   (state, props) => state.filter(x => x.id === props.roomId)[0]
 );
 
-export const selectEventDetails = createSelector(
-  selectEventById,
-  selectRoomById,
-  (room,event) => { return {room:room, event:event} }
-);
+// export const selectEventDetails = createSelector(
+//   selectEventById,
+//   selectRoomById,
+//   (room, event) => {
+//     return { room: room, event: event };
+//   }
+// );

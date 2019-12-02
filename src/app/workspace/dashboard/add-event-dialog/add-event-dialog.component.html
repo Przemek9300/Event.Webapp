@@ -1,0 +1,81 @@
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form
+      fxLayout="column"
+      fxLayoutAlign="space-evenly center"
+      [formGroup]="firstFormGroup"
+    >
+      <ng-template matStepLabel>Let's Start</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Title" formControlName="title" required />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Description"
+          formControlName="description"
+        />
+      </mat-form-field>
+
+      <!-- <mat-form-field>
+        <input
+          matInput
+          #fileImage
+          hidden="true"
+          type="file"
+          onclick="this.value=null"
+          (change)="imageInputChange($event)"
+          accept=".png"
+          formControlName="image"
+        />
+        <button mat-flat-button color="primary" (click)="fileImage.click()">
+          Load image file
+        </button>
+      </mat-form-field> -->
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="isLinear">
+    <form
+      [formGroup]="secondFormGroup"
+      fxLayout="column"
+      fxLayoutAlign="space-evenly center"
+      [formGroup]="firstFormGroup"
+    >
+      <ng-template matStepLabel>Pick time and room</ng-template>
+      <mat-form-field>
+        <mat-label>List of available rooms</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let room of rooms$ | async" [value]="room.name">
+            {{ room.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Address"
+          formControlName="secondCtrl"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="datetime-local" placeholder="start date" />
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    You are now done.
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

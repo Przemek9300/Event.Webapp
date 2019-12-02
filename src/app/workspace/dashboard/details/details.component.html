@@ -1,30 +1,58 @@
-<div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="10" fxLayoutAlign="center">
+<div
+  class="container"
+  fxLayout="row wrap"
+  fxLayout.xs="column"
+  fxLayoutGap="10"
+  fxLayoutAlign="center"
+>
   <div fxFlex="50">
-    <ngx-qrcode class="qr " qrc-element-type="url" [qrc-value]="event.url">More information </ngx-qrcode>
+    <ngx-qrcode class="qr " qrc-element-type="url" [qrc-value]="event.url"
+      >More information
+    </ngx-qrcode>
     <app-chart [members]="event.members"></app-chart>
   </div>
   <div fxFlex="40">
     <div>
-      <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="10" fxLayoutAlign="center">
-        <h1 fxFlex="100"> {{event.title | uppercase}} </h1>
-        <img fxFlex="50" class="event-image p-col-6" src="{{event.image}}" alt="" srcset="">
+      <div
+        fxLayout="row wrap"
+        fxLayout.xs="column"
+        fxLayoutGap="10"
+        fxLayoutAlign="center"
+      >
+        <h1 fxFlex="100">{{ event.event_name | uppercase }}</h1>
+        <img
+          fxFlex="50"
+          class="event-image p-col-6"
+          src="{{ event.image }}"
+          alt=""
+          srcset=""
+        />
 
-        <h2> {{event.start | date:"long"}}</h2>
-        <p> {{event.description}}</p>
-        <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="10%" fxLayoutAlign="base-line ">
+        <h2>{{ event.start_time | date: "long" }}</h2>
+        <p>{{ event.description }}</p>
+        <div
+          fxLayout="row wrap"
+          fxLayout.xs="column"
+          fxLayoutGap="10%"
+          fxLayoutAlign="base-line "
+        >
           <h3 fxFlex="100%">Members:</h3>
 
-
-          <li fxFlex="10%" *ngFor="let member of event.members">
-            <img [ngClass]="statusClass(member)" class="avatar" src="{{member.avatar}}" alt="" srcset="">
-            <b>{{member.status}}</b>
-
+          <li fxFlex="10%" *ngFor="let member of event.client">
+            <img
+              [ngClass]="statusClass(member)"
+              class="avatar"
+              src="assets/images/user.png"
+              alt=""
+              srcset=""
+              height="50px"
+              width="50px"
+            />
+            <b>{{ member.status }}</b>
           </li>
-          <h3>Total:{{event.members.length}}</h3>
-
+          <h3>Total:{{ event.client.length }}</h3>
         </div>
       </div>
-
-
     </div>
   </div>
+</div>

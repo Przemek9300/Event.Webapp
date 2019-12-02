@@ -23,7 +23,8 @@ export class DashboardComponent implements OnInit {
         map(events =>
           events.sort(
             (curr, prev) =>
-              new Date(curr.start).getTime() - new Date(prev.start).getTime()
+              new Date(curr.start_time).getTime() -
+              new Date(prev.start_time).getTime()
           )
         )
       );

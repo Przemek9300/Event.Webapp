@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 import { SignInComponent } from "./sign-in/sign-in.component";
 import { AccessLayoutComponent } from "./access-layout/access-layout.component";
 import { SignUpComponent } from "./sign-up/sign-up.component";
-import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { ForgotPasswordComponent } from "./forgot-password/forgot-password.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "signin", pathMatch: "full" },
@@ -14,7 +14,7 @@ const routes: Routes = [
     children: [
       { path: "signin", component: SignInComponent },
       { path: "signup", component: SignUpComponent },
-      { path: "password", component: ForgetPasswordComponent }
+      { path: "password", component: ForgotPasswordComponent }
     ]
   }
 ];

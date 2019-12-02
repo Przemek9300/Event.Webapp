@@ -2,10 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { WorkspaceState } from "../../store/workspace-state";
 import { selectEventById } from "../../store/selectors";
-import { Observable } from "rxjs";
 import { Event } from "src/models/event";
 import { ActivatedRoute } from "@angular/router";
-import { Member, Status } from 'src/models/member';
+import { Member, Status } from "src/models/member";
 
 @Component({
   selector: "app-details",
@@ -15,7 +14,7 @@ import { Member, Status } from 'src/models/member';
 export class DetailsComponent implements OnInit {
   public event: Event;
   public data: any;
-  ngxQrcode2 = 'https://www.npmjs.com/package/ngx-qrcode2';
+  ngxQrcode2 = "https://www.npmjs.com/package/ngx-qrcode2";
   constructor(
     private store: Store<WorkspaceState>,
     private route: ActivatedRoute
@@ -23,16 +22,14 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit() {
     this.store
-      .select(selectEventById, { id: this.route.snapshot.paramMap.get("id") })
+      .select(selectEventById(1))
       .subscribe(event => (this.event = event));
   }
-  public statusClass(member:Member){
+  public statusClass(member: Member) {
     return {
-      "accepted-status" : member.status === Status.Accepted,
-      "invited-status" : member.status === Status.Invited,
-      "declined-status" : member.status === Status.Declined
-
-    }
+      "accepted-status": member.status === Status.Accepted,
+      "invited-status": member.status === Status.Invited,
+      "declined-status": member.status === Status.Declined
+    };
   }
-  
 }

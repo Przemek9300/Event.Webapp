@@ -5,8 +5,9 @@
 export const environment = {
   production: false,
   myEvent: "http://localhost:5000/MyEvents",
-  event: "http://localhost:5000/events",
-  rooms: "http://localhost:5000/rooms"
+  event: "http://localhost:5000/api/events/",
+  rooms: "http://localhost:5000/api/rooms/",
+  auth: "http://localhost:5000/auth/"
 };
 
 /*
