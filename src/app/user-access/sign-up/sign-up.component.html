@@ -2,24 +2,60 @@
   <h2>Sign up</h2>
 
   <form
+    [formGroup]="signup"
     class="form"
     class="field-width"
     fxLayout="column"
     fxLayoutAlign="space-around center"
   >
+    <mat-error *ngIf="error">
+      {{ error }}
+    </mat-error>
     <mat-form-field class="field-width">
-      <input type="text" matInput placeholder="username" value="" />
+      <input
+        type="text"
+        matInput
+        placeholder="Username"
+        value=""
+        formControlName="username"
+      />
     </mat-form-field>
     <mat-form-field class="field-width">
-      <input type="email" matInput placeholder="email" value="" />
+      <input
+        type="email"
+        matInput
+        placeholder="Email"
+        value=""
+        formControlName="email"
+      />
     </mat-form-field>
 
     <mat-form-field class="field-width">
-      <input type="password" matInput placeholder="password" value="" />
+      <input
+        type="password"
+        matInput
+        placeholder="Password"
+        value=""
+        formControlName="password"
+      />
     </mat-form-field>
     <mat-form-field class="field-width">
-      <input type="password" matInput placeholder="password" value="" />
+      <input
+        type="password"
+        matInput
+        placeholder="Confirm password"
+        value=""
+        formControlName="confirmPassword"
+      />
     </mat-form-field>
   </form>
-  <button type="submit" mat-stroked-button color="primary">Submit</button>
+  <button
+    [disabled]="signup.invalid"
+    type="submit"
+    (click)="submit()"
+    mat-stroked-button
+    color="primary"
+  >
+    Submit
+  </button>
 </div>

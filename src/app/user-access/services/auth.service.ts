@@ -27,10 +27,16 @@ export class AuthService {
         tap(() => this.router.navigate(["/workspace"]))
       );
   }
+  public register(username: string, email: string, password: string) {
+    return this.http
+      .post<User>(environment.register, { username, password })
+  
+  }
+
   public logout(): void {
     this.currentUser.next({ token: null, username: "" });
     localStorage.clear();
-    this.router.navigate(["/access/signin"]);
+    this.router.navigate(["/access/singin"]);
   }
   constructor(private http: HttpClient, private router: Router) {}
 }
