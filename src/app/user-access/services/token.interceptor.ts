@@ -3,21 +3,23 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpErrorResponse
 } from "@angular/common/http";
 import { AuthService } from "./auth.service";
 import { Observable } from "rxjs";
 import { Token, User } from "./token";
+import { tap } from "rxjs/operators";
+import { Router } from "@angular/router";
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-  constructor() {}
+  constructor(private router: Router) {}
   intercept(
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     const user: User = JSON.parse(localStorage.getItem("user"));
-    console.log(user)
-    if (user !==null) {
+    if (user) {
       request = request.clone({
         setHeaders: {
           Authorization: `token ${user.token.token}`
@@ -25,6 +27,16 @@ export class TokenInterceptor implements HttpInterceptor {
       });
     }
 
-    return next.handle(request);
+    return next.handle(request).pipe(
+      tap(
+        () => {},
+        (err: HttpErrorResponse) => {
+          if (err.status !== 401) {
+            return;
+          }
+          this.router.navigate(['/access/signin']);
+        }
+      )
+    );
   }
 }
