@@ -13,7 +13,7 @@ export class EventEffects {
       mergeMap(() =>
         this.eventService.getAllEvents().pipe(
           map(
-            events => getEventsSuccess({ events: events }),
+            events => getEventsSuccess({ events }),
             catchError(() => of(getEventsFail))
           )
         )

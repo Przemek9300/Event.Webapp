@@ -13,13 +13,12 @@ export class RoomEffects {
       mergeMap(() =>
         this.roomService.getRooms().pipe(
           map(
-            rooms => getRoomsSuccess({ rooms: rooms }),
+            rooms => getRoomsSuccess({ rooms }),
             catchError(() => of(getRoomsFail))
           )
         )
       )
     )
   );
-
   constructor(private actions$: Actions, private roomService: RoomService) {}
 }
