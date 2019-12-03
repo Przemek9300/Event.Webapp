@@ -1,13 +1,13 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { environment } from "src/environments/environment";
-import { Observable, Subject } from "rxjs";
-import { Token, User } from "./token";
-import { map, tap } from "rxjs/operators";
-import { Router } from "@angular/router";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { Observable, Subject } from 'rxjs';
+import { Token, User } from './token';
+import { map, tap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class AuthService {
   public currentUser: Subject<User> = new Subject<User>();
@@ -17,26 +17,24 @@ export class AuthService {
       .post<Token>(environment.auth, { username, password })
       .pipe(
         map(token => {
-          let user: User = { token: token, username: username };
+          const user: User = { token, username };
           if (user && user.token) {
-            localStorage.setItem("user", JSON.stringify(user));
+            localStorage.setItem('user', JSON.stringify(user));
             this.currentUser.next(user);
           }
           return user;
         }),
-        tap(() => this.router.navigate(["/workspace"]))
+        tap(() => this.router.navigate(['/workspace']))
       );
   }
   public register(username: string, email: string, password: string) {
-    return this.http
-      .post<User>(environment.register, { username, password })
-  
+    return this.http.post<User>(environment.register, { username, password });
   }
 
   public logout(): void {
-    this.currentUser.next({ token: null, username: "" });
+    this.currentUser.next({ token: null, username: '' });
     localStorage.clear();
-    this.router.navigate(["/access/singin"]);
+    this.router.navigate(['/access/singin']);
   }
   constructor(private http: HttpClient, private router: Router) {}
 }

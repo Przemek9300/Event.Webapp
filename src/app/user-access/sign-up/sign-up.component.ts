@@ -25,7 +25,7 @@ export class SignUpComponent implements OnInit {
   ) {}
   public submit() {
     if (this.signup.valid) {
-      let user = this.signup.value as RegisterUserDTO;
+      const user = this.signup.value as RegisterUserDTO;
       this.authService
         .register(user.username, user.email, user.password)
         .subscribe(
