@@ -1,7 +1,8 @@
-<ul>
-
-  <li *ngFor="let room of rooms$ | async">
-    <button>{{room.name }}</button>
-  </li>
-
-</ul>
+<mat-form-field>
+  <mat-label>Select room</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let room of rooms$ | async" [value]="room.id">
+      {{ room.name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

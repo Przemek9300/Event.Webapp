@@ -18,27 +18,18 @@ export class SignUpComponent implements OnInit {
   });
   error: string;
 
-  constructor(
-    private fb: FormBuilder,
-    private authService: AuthService,
-    private router: Router
-  ) {}
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {}
   public submit() {
     if (this.signup.valid) {
       const user = this.signup.value as RegisterUserDTO;
-      this.authService
-        .register(user.username, user.email, user.password)
-        .subscribe(
-          () => {
-            this.router.navigate(['access/signin']);
-          },
-          (err: HttpErrorResponse) => {
-            this.error =
-              err.status === 400
-                ? 'You have entered an invalid username or password.'
-                : '';
-          }
-        );
+      this.authService.register(user.username, user.email, user.password).subscribe(
+        () => {
+          this.router.navigate(['/access/signin']);
+        },
+        (err: HttpErrorResponse) => {
+          this.error = err.status === 400 ? 'You have entered an invalid username or password.' : '';
+        }
+      );
     }
   }
   ngOnInit() {}

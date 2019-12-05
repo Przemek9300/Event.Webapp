@@ -1,14 +1,20 @@
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+
 /* You can add global styles to this file, and also import other style files */
-$c1:#201F1F;
-$c2:#313130;
-$c3:#292827;
-$c4:#008F68;
-$c5:#24DD8F;
-$hover:#61A8FF;
-$font: #F4F4F4;
+$c1: #201f1f;
+$c2: #313130;
+$c3: #292827;
+$c4: #008f68;
+$c5: #24dd8f;
+$hover: #61a8ff;
+$font: #f4f4f4;
 
-
-
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}

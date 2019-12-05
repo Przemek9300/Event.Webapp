@@ -1,13 +1,9 @@
-<div  fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="10" fxLayoutAlign="center">
+<div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="50" fxLayoutAlign="center">
   <div fxFlex="50">
     <app-calendary [events$]="events$"> </app-calendary>
-
   </div>
 
-  <div fxFlex="20"  >
+  <div fxFlex="20">
     <app-list-room [rooms$]="rooms$"> </app-list-room>
-
   </div>
-
 </div>
-

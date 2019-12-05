@@ -8,7 +8,5 @@ import interactionPlugin from '@fullcalendar/interaction';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }

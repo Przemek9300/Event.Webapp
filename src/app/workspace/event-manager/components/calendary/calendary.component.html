@@ -1,1 +1,10 @@
-<p-fullCalendar #fc [events]="events$ | async" [options]="options"></p-fullCalendar>
+<full-calendar
+  #calendar
+  [header]="{
+    left: 'prev,next today',
+    center: 'title',
+    right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+  }"
+  defaultView="dayGridMonth"
+  [plugins]="calendarPlugins"
+></full-calendar>

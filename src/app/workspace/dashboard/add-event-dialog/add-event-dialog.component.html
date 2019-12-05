@@ -1,20 +1,12 @@
-<mat-horizontal-stepper [linear]="isLinear" #stepper>
+<mat-horizontal-stepper [linear]="true" #stepper>
   <mat-step [stepControl]="firstFormGroup">
-    <form
-      fxLayout="column"
-      fxLayoutAlign="space-evenly center"
-      [formGroup]="firstFormGroup"
-    >
+    <form fxLayout="column" fxLayoutAlign="space-evenly center" [formGroup]="basicFormGroup">
       <ng-template matStepLabel>Let's Start</ng-template>
       <mat-form-field>
         <input matInput placeholder="Title" formControlName="title" required />
       </mat-form-field>
       <mat-form-field>
-        <input
-          matInput
-          placeholder="Description"
-          formControlName="description"
-        />
+        <input matInput placeholder="Description" formControlName="description" />
       </mat-form-field>
 
       <!-- <mat-form-field>
@@ -33,37 +25,32 @@
         </button>
       </mat-form-field> -->
       <div>
-        <button mat-button matStepperNext>Next</button>
+        <button [(disabled)]="basicFormGroup.invalid" mat-button matStepperNext>Next</button>
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="isLinear">
-    <form
-      [formGroup]="secondFormGroup"
-      fxLayout="column"
-      fxLayoutAlign="space-evenly center"
-      [formGroup]="firstFormGroup"
-    >
+  <mat-step [stepControl]="true">
+    <app-calendary [events$]="events$"> </app-calendary>
+
+    <form [formGroup]="dateFormGroup" fxLayout="column" fxLayoutAlign="space-evenly center">
       <ng-template matStepLabel>Pick time and room</ng-template>
       <mat-form-field>
         <mat-label>List of available rooms</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let room of rooms$ | async" [value]="room.name">
+        <mat-select formControlName="room">
+          <mat-option *ngFor="let room of rooms$ | async" [value]="room.id">
             {{ room.name }}
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <mat-form-field>
-        <input
-          matInput
-          placeholder="Address"
-          formControlName="secondCtrl"
-          required
-        />
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput type="datetime-local" placeholder="start date" />
-      </mat-form-field>
+      <div formGroupName="date">
+        <mat-form-field>
+          <input matInput type="datetime" placeholder="start date" formControlName="start" />
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="datetime" placeholder="start date" formControlName="end" />
+        </mat-form-field>
+      </div>
+
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button matStepperNext>Next</button>

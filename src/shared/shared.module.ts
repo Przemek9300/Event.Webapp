@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FullCalendarModule } from 'primeng/fullcalendar';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { MenubarModule } from 'primeng/menubar';
 import { TabMenuModule } from 'primeng/tabmenu';
@@ -11,6 +10,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
 import { VirtualScrollerModule } from 'primeng/virtualscroller';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { FullCalendarModule } from '@fullcalendar/angular'; // for FullCalendar!
 @NgModule({
   imports: [],
   declarations: [],
