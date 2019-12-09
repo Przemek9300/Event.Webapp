@@ -42,12 +42,12 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <div formGroupName="date">
+      <div formGroupName="date" [formGroup]="dateFormGroup" fxLayout="column" fxLayoutAlign="space-evenly center">
         <mat-form-field>
-          <input matInput type="datetime" placeholder="start date" formControlName="start" />
+          <input matInput type="datetime-local" placeholder="start date" formControlName="start" />
         </mat-form-field>
         <mat-form-field>
-          <input matInput type="datetime" placeholder="start date" formControlName="end" />
+          <input matInput type="datetime-local" placeholder="end date" formControlName="end" />
         </mat-form-field>
       </div>
 
@@ -59,10 +59,10 @@
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
-    You are now done.
+    Summary:
     <div>
       <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
+      <button mat-button (click)="submit()">Add Event</button>
     </div>
   </mat-step>
 </mat-horizontal-stepper>

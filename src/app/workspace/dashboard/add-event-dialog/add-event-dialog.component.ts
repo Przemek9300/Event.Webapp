@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { WorkspaceState } from '../../store/workspace-state';
-import { selectEvent, selectRoom } from '../../store/selectors';
+import { selectEvents, selectRoom } from '../../store/selectors';
 import { Room } from 'src/models/room';
 import { Observable } from 'rxjs';
-import { Event } from 'src/models/event';
+import { Event, EventDto } from 'src/models/event';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { overlapValidator } from './validators';
+import { EventService } from '../../services/event-service';
+import { addEvent } from '../../store/event/actions';
 
 @Component({
   selector: 'app-add-event-dialog',
@@ -26,12 +28,12 @@ export class AddEventDialogComponent implements OnInit {
   constructor(private store: Store<WorkspaceState>, private fb: FormBuilder) {}
 
   ngOnInit() {
-    this.store.select(selectEvent).subscribe(events => {
+    this.store.select(selectEvents).subscribe(events => {
       this.events = events;
       this.dateFormGroup = this.fb.group({
         date: this.fb.group(
           {
-            start: [Date.now(), Validators.required],
+            start: [new Date(Date.now()), Validators.required],
             end: ['', Validators.required]
           },
           { validators: [overlapValidator(this.events)] }
@@ -41,5 +43,19 @@ export class AddEventDialogComponent implements OnInit {
       });
     });
     this.rooms$ = this.store.select(selectRoom);
+  }
+  public submit(): void {
+    if (this.dateFormGroup.valid && this.basicFormGroup.valid) {
+      const model: EventDto = {
+        name: this.basicFormGroup.value.title,
+        description: this.basicFormGroup.value.description,
+        room: this.dateFormGroup.value.room,
+        start: this.dateFormGroup.value.date.start,
+        end: this.dateFormGroup.value.date.end,
+        clients: [],
+        owner: 6
+      };
+      this.store.dispatch(addEvent({ event: model }));
+    }
   }
 }

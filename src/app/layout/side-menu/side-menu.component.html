@@ -1,9 +1,16 @@
-<ul class="container" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="10">
-  <li [routerLink]='item.link' [ngClass]="{'active': item.link == currentPath }" fxFlex="100" color="primary"
-    *ngFor="let item of items">
-    <div class="container"  fxFlex="100" fxLayout="row" fxLayoutGap="50">
-      <mat-icon  fxFlex="50" class="nav-item">{{item.icon}}</mat-icon>
-      <p  fxFlex="50">{{item.label}}</p>
-    </div>
+<ul class="container" fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="40">
+  <li
+    fxLayoutAlign="space-evenly center"
+    fxLayout="row"
+    fxFlex
+    [routerLink]="item.link"
+    [ngClass]="{ active: item.link == currentPath }"
+    color="primary"
+    *ngFor="let item of items"
+  >
+    <mat-icon class="nav-item">{{ item.icon }}</mat-icon>
+    <p>
+      {{ item.label }}
+    </p>
   </li>
 </ul>

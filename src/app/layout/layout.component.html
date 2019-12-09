@@ -1,14 +1,16 @@
-<mat-toolbar color="primary">
-  <button (click)="handleClick()" mat-icon-button>
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>EVENT</span>
-</mat-toolbar>
-<mat-sidenav-container class="container">
-  <mat-sidenav [(opened)]="opened">
-    <app-side-menu></app-side-menu>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<div class="container" fxLayout="column" fxLayoutAlign="center stretch">
+  <mat-toolbar fxFlex="10" color="primary">
+    <button (click)="handleClick()" mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>EVENT</span>
+  </mat-toolbar>
+  <mat-sidenav-container fxFlex>
+    <mat-sidenav [(opened)]="opened">
+      <app-side-menu></app-side-menu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

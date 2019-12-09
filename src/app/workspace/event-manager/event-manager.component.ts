@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 import { Store } from "@ngrx/store";
 import { WorkspaceState } from "../store/workspace-state";
-import { selectEvent, selectRoom } from "../store/selectors";
+import { selectEvents, selectRoom } from "../store/selectors";
 import { Observable } from "rxjs";
 import { Event } from "src/models/event";
 import { Room } from 'src/models/room';
@@ -18,7 +18,7 @@ export class EventManagerComponent implements OnInit {
   constructor(private store: Store<WorkspaceState>) {}
 
   ngOnInit() {
-    this.events$ = this.store.select(selectEvent);
+    this.events$ = this.store.select(selectEvents);
     this.rooms$ = this.store.select(selectRoom);
 
   }

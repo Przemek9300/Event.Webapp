@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { Action } from '@fullcalendar/core';
-import { getEvents, getEventsSuccess, getEventsFail } from './actions';
+import { getEvents, getEventsSuccess, getEventsFail, addEvent, addEventSuccess, addEventFail } from './actions';
 import { Event } from 'src/models/event';
 
 export interface EventState {
@@ -21,7 +21,15 @@ export const reducer = createReducer(
     isLoading: false,
     events: payload.events
   })),
-  on(getEventsFail, state => ({ ...state, isLoading: false }))
+  on(getEventsFail, state => ({ ...state, isLoading: false })),
+
+  on(addEvent, state => ({ ...state, isLoading: true })),
+  on(addEventSuccess, (state, payload) => ({
+    ...state,
+    isLoading: false,
+    events: [...state.events, payload.event]
+  })),
+  on(addEventFail, state => ({ ...state, isLoading: false }))
 );
 export function eventReducer(state: EventState, action: Action) {
   return reducer(state, action);

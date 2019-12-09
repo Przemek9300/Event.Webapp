@@ -34,7 +34,6 @@ export class SignUpComponent implements OnInit {
   }
   ngOnInit() {}
 }
-
 export interface RegisterUserDTO {
   email: string;
   username: string;

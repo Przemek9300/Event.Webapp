@@ -23,6 +23,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { EmptyCardComponent } from './dashboard/empty-card/empty-card.component';
 import { AddEventDialogComponent } from './dashboard/add-event-dialog/add-event-dialog.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { CardSkeletonComponent } from 'src/shared/card-skeleton/card-skeleton.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { HttpClientModule } from '@angular/common/http';
     ChartComponent,
     InviteFormComponent,
     EmptyCardComponent,
-    AddEventDialogComponent
+    AddEventDialogComponent,
+    CardSkeletonComponent
   ],
   imports: [
     CommonModule,

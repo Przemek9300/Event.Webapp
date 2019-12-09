@@ -1,6 +1,4 @@
-@import "../../../../styles.scss";
-
-
+@import '../../../../styles.scss';
 
 .card:hover {
   cursor: pointer;
@@ -24,8 +22,4 @@
   width: 100%;
   max-width: 400px;
   height: auto;
-}
-
-.card{
-  margin-top: 50px;
 }

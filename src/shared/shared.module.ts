@@ -11,6 +11,9 @@ import { ButtonModule } from 'primeng/button';
 import { VirtualScrollerModule } from 'primeng/virtualscroller';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { FullCalendarModule } from '@fullcalendar/angular'; // for FullCalendar!
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { CardSkeletonComponent } from 'src/shared/card-skeleton/card-skeleton.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @NgModule({
   imports: [],
   declarations: [],
@@ -26,7 +29,9 @@ import { FullCalendarModule } from '@fullcalendar/angular'; // for FullCalendar!
     CarouselModule,
     ButtonModule,
     VirtualScrollerModule,
-    NgxQRCodeModule
+    NgxQRCodeModule,
+    NgxSkeletonLoaderModule,
+    MatProgressSpinnerModule
   ]
 })
 export class SharedModule {}
