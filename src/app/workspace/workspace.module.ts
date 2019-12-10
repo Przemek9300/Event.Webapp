@@ -25,6 +25,7 @@ import { AddEventDialogComponent } from './dashboard/add-event-dialog/add-event-
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { CardSkeletonComponent } from 'src/shared/card-skeleton/card-skeleton.component';
+import { userReducer } from './store/user/reducer';
 
 @NgModule({
   declarations: [
