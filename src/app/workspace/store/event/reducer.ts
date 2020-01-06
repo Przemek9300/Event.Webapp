@@ -1,5 +1,4 @@
-import { createReducer, on } from '@ngrx/store';
-import { Action } from '@fullcalendar/core';
+import { createReducer, on, Action } from '@ngrx/store';
 import { getEvents, getEventsSuccess, getEventsFail, addEvent, addEventSuccess, addEventFail } from './actions';
 import { Event } from 'src/models/event';
 
