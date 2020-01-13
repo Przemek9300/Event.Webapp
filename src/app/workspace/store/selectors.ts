@@ -6,6 +6,7 @@ const selectFeature = createFeatureSelector<WorkspaceState>(workspaceFeatureKey)
 export const selectOverview = createSelector(selectFeature, state => state.overview);
 export const selectedEventId = createSelector(selectOverview, state => state.eventId);
 export const selectedRoomId = createSelector(selectOverview, state => state.roomId);
+export const selectedDate = createSelector(selectOverview, state => state.date);
 
 export const selectEventStore = createSelector(selectFeature, state => state.event);
 
@@ -27,6 +28,10 @@ export const selectEventRoom = createSelector(selectEventById, selectRoomById, (
   ev: ev,
   room: room
 }));
+export const selectEventsByDate = createSelector(selectEvents, selectedDate, (events, date) =>
+  events.filter(event => event.start_time === date)
+);
+
 // export const selectEventDetails = createSelector(
 //   selectEventById,
 //   selectRoomById,

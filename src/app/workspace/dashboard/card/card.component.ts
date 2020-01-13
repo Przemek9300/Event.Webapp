@@ -5,6 +5,7 @@ import { InviteFormComponent } from '../../invite-form/invite-form.component';
 import { Store } from '@ngrx/store';
 import { WorkspaceState } from '../../store/workspace-state';
 import { SelectEvent, SelectRoom } from '../../store/overview/actions';
+import { OpenSnackbar } from '../../store/snackbar/action';
 
 @Component({
   selector: 'app-card',

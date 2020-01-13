@@ -1,5 +1,14 @@
 import { createReducer, on, Action } from '@ngrx/store';
-import { getEvents, getEventsSuccess, getEventsFail, addEvent, addEventSuccess, addEventFail } from './actions';
+import {
+  getEvents,
+  getEventsSuccess,
+  getEventsFail,
+  addEvent,
+  addEventSuccess,
+  addEventFail,
+  addParticipant,
+  addParticipantSuccess
+} from './actions';
 import { Event } from 'src/models/event';
 
 export interface EventState {
@@ -28,6 +37,17 @@ export const reducer = createReducer(
     isLoading: false,
     events: [...state.events, payload.event]
   })),
+  on(addEventFail, state => ({ ...state, isLoading: false })),
+
+  on(addParticipant, state => ({ ...state, isLoading: true })),
+  on(addParticipantSuccess, (state, payload) => {
+    const event = state.events.find(event => event.id === payload.id);
+    return {
+      ...state,
+      isLoading: false,
+      events: [...state.events, { ...event, client: [...event.client, payload.id] }]
+    };
+  }),
   on(addEventFail, state => ({ ...state, isLoading: false }))
 );
 export function eventReducer(state: EventState, action: Action) {
