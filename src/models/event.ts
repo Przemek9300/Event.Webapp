@@ -5,7 +5,7 @@ export interface Event {
   url: string;
   title: string;
   description: string;
-  room: number;
+  roomId: number;
   owner: number;
   client: number[];
   start_time: Date;
@@ -14,9 +14,9 @@ export interface Event {
 }
 
 export interface EventDto {
-  name: string;
+  title: string;
   description: string;
-  room: number;
+  roomId: number;
   start: Date;
   end: Date;
   image?: string;

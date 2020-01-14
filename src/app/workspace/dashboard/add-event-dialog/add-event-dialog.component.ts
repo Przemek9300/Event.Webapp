@@ -47,9 +47,9 @@ export class AddEventDialogComponent implements OnInit {
   public submit(): void {
     if (this.dateFormGroup.valid && this.basicFormGroup.valid) {
       const model: EventDto = {
-        name: this.basicFormGroup.value.title,
+        title: this.basicFormGroup.value.title,
         description: this.basicFormGroup.value.description,
-        room: this.dateFormGroup.value.room,
+        roomId: this.dateFormGroup.value.room,
         start: this.dateFormGroup.value.date.start,
         end: this.dateFormGroup.value.date.end,
         clients: [],

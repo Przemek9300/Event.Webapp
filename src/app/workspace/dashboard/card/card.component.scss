@@ -18,8 +18,9 @@
 }
 
 .image-event {
-  border-radius: 9px;
-  width: 100%;
-  max-width: 400px;
+  max-height: 400px;
   height: auto;
+}
+.card {
+  max-width: 80%;
 }

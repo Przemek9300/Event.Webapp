@@ -7,3 +7,6 @@ export const getEventsSuccess = createAction('Get All Events Success', props<{ e
 export const addEvent = createAction('Add Event', props<{ event: EventDto }>());
 export const addEventFail = createAction('Add Event Fail');
 export const addEventSuccess = createAction('Add Event Success', props<{ event: Event }>());
+export const addParticipant = createAction('Add participant', props<{ email: string; id: number }>());
+export const addParticipantFail = createAction('Add participant Fail');
+export const addParticipantSuccess = createAction('Add participant Success', props<{ email: string; id: number }>());

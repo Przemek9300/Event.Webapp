@@ -1,5 +1,5 @@
 <div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-around center">
-  <app-card fxFlex="20%" *ngFor="let event of events$ | async" [event]="event"> </app-card>
+  <app-card class="card" fxFlex="30%" *ngFor="let event of events$ | async" [event]="event"> </app-card>
   <ng-container *ngIf="(loading$ | async) === true">
     <app-card-skeleton fxLayout="column" fxLayoutAlign="center center" fxFlex="20"></app-card-skeleton>
   </ng-container>

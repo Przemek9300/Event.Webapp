@@ -20,6 +20,8 @@ import { MaterialModule } from './material/material.module';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TokenInterceptor } from './user-access/services/token.interceptor';
+import { snackbarReducer } from './workspace/store/snackbar/reducer';
+import { SnackbarEffects } from './workspace/store/snackbar/effects';
 @NgModule({
   declarations: [AppComponent, LayoutComponent, SideMenuComponent],
   imports: [
@@ -29,12 +31,14 @@ import { TokenInterceptor } from './user-access/services/token.interceptor';
     AppRoutingModule,
     SharedModule,
     StoreModule.forRoot({}),
+    StoreModule.forRoot({ snackbar: snackbarReducer }),
+
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production
     }),
     FlexLayoutModule,
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([SnackbarEffects]),
     MaterialModule,
     MatCheckboxModule,
     FormsModule
