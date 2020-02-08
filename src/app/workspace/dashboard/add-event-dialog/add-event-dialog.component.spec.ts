@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddEventDialogComponent } from './add-event-dialog.component';
+import { MaterialModule } from 'src/app/material/material.module';
+import { FormsModule } from '@angular/forms';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 describe('AddEventDialogComponent', () => {
   let component: AddEventDialogComponent;
@@ -8,9 +11,9 @@ describe('AddEventDialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddEventDialogComponent ]
-    })
-    .compileComponents();
+      declarations: [AddEventDialogComponent],
+      imports: [MaterialModule, FormsModule, FullCalendarModule]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
