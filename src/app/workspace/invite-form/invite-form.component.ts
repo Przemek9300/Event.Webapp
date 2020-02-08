@@ -21,6 +21,7 @@ export class InviteFormComponent implements OnInit {
     if (this.basicFormGroup.valid) {
       this.store.dispatch(addParticipant({ id: 1, email: this.basicFormGroup.value.email }));
       this.basicFormGroup.reset();
+      this.basicFormGroup.markAsUntouched();
     }
   }
 }

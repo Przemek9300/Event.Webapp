@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Event, EventDto } from 'src/models/event';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
@@ -17,8 +17,8 @@ export class EventService {
   public addEvent(event: EventDto): Observable<Event> {
     return this.http.post<Event>(environment.event, event);
   }
-  public addParticipant(email: string, id: number): Observable<Event> {
-    return this.http.put<Event>(`${environment.event}/${id}`, { email });
+  public addParticipant(email: string, id: number): Observable<{ id: number; email: string }> {
+    return of({ id: id, email: email });
   }
 
   constructor(private http: HttpClient) {}

@@ -52,7 +52,7 @@ export class AddEventDialogComponent implements OnInit {
         roomId: this.dateFormGroup.value.room,
         start: this.dateFormGroup.value.date.start,
         end: this.dateFormGroup.value.date.end,
-        clients: [],
+        members: [],
         owner: 6
       };
       this.store.dispatch(addEvent({ event: model }));
