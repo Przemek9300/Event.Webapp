@@ -19,7 +19,7 @@ export class InviteFormComponent implements OnInit {
   }
   public sendInvitation() {
     if (this.basicFormGroup.valid) {
-      this.store.dispatch(addParticipant({ id: 1, email: this.basicFormGroup.value['email'] }));
+      this.store.dispatch(addParticipant({ id: 1, email: this.basicFormGroup.value.email }));
       this.basicFormGroup.reset();
     }
   }

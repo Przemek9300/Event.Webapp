@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface MenuItem {
   label: string;
@@ -10,9 +10,9 @@ interface MenuItem {
 }
 
 @Component({
-  selector: "app-side-menu",
-  templateUrl: "./side-menu.component.html",
-  styleUrls: ["./side-menu.component.scss"]
+  selector: 'app-side-menu',
+  templateUrl: './side-menu.component.html',
+  styleUrls: ['./side-menu.component.scss']
 })
 export class SideMenuComponent implements OnInit {
   public items: MenuItem[];
@@ -22,10 +22,10 @@ export class SideMenuComponent implements OnInit {
   ngOnInit() {
     this.currentPath = this.router.url;
     this.items = [
-      { label: "Dashboard", class: [], link: "", icon: "home" },
-      { label: "Planning", class: [], link: "planning", icon: "assessment" },
-      { label: "Dashboard", class: [], link: "", icon: "home" },
-      { label: "Log out", class: [], link: "access", icon: "assessment" }
+      { label: 'Dashboard', class: [], link: '', icon: 'home' },
+      { label: 'Planning', class: [], link: 'planning', icon: 'assessment' },
+      { label: 'Dashboard', class: [], link: '', icon: 'home' },
+      { label: 'Log out', class: [], link: 'access', icon: 'assessment' }
     ];
   }
 }

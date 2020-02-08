@@ -1,5 +1,5 @@
-import { Event } from "src/models/event";
-import { Room } from "src/models/room";
+import { Event } from 'src/models/event';
+import { Room } from 'src/models/room';
 import { createReducer, on, Action } from '@ngrx/store';
 import { getRoomsFail, getRooms, getRoomsSuccess } from './actions';
 

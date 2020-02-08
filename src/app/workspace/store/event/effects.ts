@@ -35,7 +35,7 @@ export class EventEffects {
       switchMap(action =>
         this.eventService.addEvent(action.event).pipe(
           map(
-            event => addEventSuccess({ event: event }),
+            event => addEventSuccess({ event }),
             catchError(error => {
               console.log(error);
               return of(addEventFail());
@@ -52,7 +52,7 @@ export class EventEffects {
       switchMap(action =>
         this.eventService.addParticipant(action.email, action.id).pipe(
           map(
-            event => addEventSuccess({ event: event }),
+            event => addEventSuccess({ event }),
             catchError(error => {
               return of(addEventFail());
             })
