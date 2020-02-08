@@ -201,7 +201,8 @@
       "size": 15
     }
   ],
-  "access": {
-    "token": "test"
+  "auth": {
+    "username": "pgadula",
+    "password": "PrzemGad94!"
   }
 }
