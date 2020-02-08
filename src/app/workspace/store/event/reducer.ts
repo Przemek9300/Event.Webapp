@@ -41,11 +41,11 @@ export const reducer = createReducer(
 
   on(addParticipant, state => ({ ...state, isLoading: true })),
   on(addParticipantSuccess, (state, payload) => {
-    const event = state.events.find(event => event.id === payload.id);
+    const events: Event = state.events.find(event => event.id === payload.id)[0];
     return {
       ...state,
       isLoading: false,
-      events: [...state.events, { ...event, client: [...event.client, payload.id] }]
+      events: [...state.events, { ...events, client: [...events.client, payload] }]
     };
   }),
   on(addEventFail, state => ({ ...state, isLoading: false }))
