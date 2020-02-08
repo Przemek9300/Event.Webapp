@@ -200,5 +200,8 @@
       "name": "Saturn",
       "size": 15
     }
-  ]
+  ],
+  "access": {
+    "token": "test"
+  }
 }
