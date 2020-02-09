@@ -2,10 +2,18 @@ import { Component, OnInit } from '@angular/core';
 
 import { Store } from '@ngrx/store';
 import { WorkspaceState } from '../store/workspace-state';
-import { selectEvents, selectRoom } from '../store/selectors';
+import {
+  selectEvents,
+  selectRoom,
+  selectEventsByRoomSelected,
+  selectRoomById,
+  selectEventById
+} from '../store/selectors';
 import { Observable } from 'rxjs';
 import { Event } from 'src/models/event';
 import { Room } from 'src/models/room';
+import { SelectRoom } from '../store/overview/actions';
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-event-manager',
   templateUrl: './event-manager.component.html',
@@ -14,6 +22,7 @@ import { Room } from 'src/models/room';
 export class EventManagerComponent implements OnInit {
   events$: Observable<Event[]>;
   rooms$: Observable<Room[]>;
+  room: Room;
   myRowData: [{ score: 23 }];
   data = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -29,7 +38,9 @@ export class EventManagerComponent implements OnInit {
   constructor(private store: Store<WorkspaceState>) {}
 
   ngOnInit() {
-    this.events$ = this.store.select(selectEvents);
+    this.store.select(selectRoomById).subscribe(room => this.room = room);
+    this.events$ = this.store.select(selectEventsByRoomSelected);
+
     this.rooms$ = this.store.select(selectRoom);
   }
 }

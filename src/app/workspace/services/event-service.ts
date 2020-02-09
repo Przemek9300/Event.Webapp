@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class EventService {
   public getMyEvents(): Observable<Event[]> {
-    return this.http.get<Event[]>(environment.myEvent);
+    return this.http.get<Event[]>(environment.event);
   }
   public getAllEvents(): Observable<Event[]> {
     return this.http.get<Event[]>(environment.event);

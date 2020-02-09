@@ -24,7 +24,6 @@ export class SideMenuComponent implements OnInit {
     this.items = [
       { label: "Dashboard", class: [], link: "", icon: "home" },
       { label: "Planning", class: [], link: "planning", icon: "assessment" },
-      { label: "Dashboard", class: [], link: "", icon: "home" },
       { label: "Log out", class: [], link: "access", icon: "assessment" }
     ];
   }

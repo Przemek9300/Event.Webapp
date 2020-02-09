@@ -3,31 +3,40 @@
   fxLayout="row wrap"
   fxLayout.xs="column"
   fxLayoutGap="5"
-  fxLayoutAlign="space-evenly start"
+  fxLayoutAlign="space-evenly center"
   fxLayoutAlign.xs="center"
 >
-  <!-- <div fxFlex="50">
-  <!-- </div> - -->
-  <mat-card class="card" fxFlex="30">
-    <mat-card-title>Month Graph</mat-card-title>
-    <mat-card-content>
-      <ng-container> <p-chart type="pie" [data]="data" [options]="options"></p-chart> </ng-container>
-    </mat-card-content>
-  </mat-card>
+  <div fxLayout="column" fxFlex="30">
+    <mat-card  class="card" fxFlex="20">
+      <mat-card-title>Budget Planner</mat-card-title>
+      <app-list-room [rooms$]="rooms$"> </app-list-room>
+
+      <mat-card-content fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="5" fxLayoutAlign="space-between start">
+        <ng-container>
+          <h2>{{room?.size? "Capacity:"+room.size: ""}}</h2>
+
+
+        </ng-container>
+        <img class="image-room" mat-card-image src="assets/images/moon.jpg" />
+
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="card" fxFlex="20">
+      <mat-card-title>Month Graph</mat-card-title>
+      <mat-card-content>
+        <ng-container> <p-chart type="pie" [data]="data" [options]="options"></p-chart> </ng-container>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
   <mat-card class="card" fxFlex="50">
-    <mat-card-title>Budget Planner</mat-card-title>
-    <app-list-room [rooms$]="rooms$"> </app-list-room>
+    <mat-card-title>Calendary</mat-card-title>
 
-    <mat-card-content fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="5" fxLayoutAlign="space-between start">
-      <ng-container>
-        <h1>Hall</h1>
-      </ng-container>
-
-      <img class="image-room" mat-card-image src="assets/images/moon.jpg" />
-    </mat-card-content>
+    <app-calendary [events$]="events$"> </app-calendary>
   </mat-card>
+
   <mat-card class="card" fxFlex="90">
-    <mat-card-title>Budget Table</mat-card-title>
+    <mat-card-title>Event Table</mat-card-title>
     <mat-card-content>
       <ng-container matColumnDef="score">
         <th mat-header-cell *matHeaderCellDef>Score</th>
@@ -35,11 +44,6 @@
         <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
         <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
       </ng-container>
-      <!-- <app-calendary fxFlex="50" [events$]="events$"> </app-calendary> -->
     </mat-card-content>
   </mat-card>
-
-  <!-- <div fxFlex="20">
-    <app-list-room [rooms$]="rooms$"> </app-list-room>
-  </div> -->
 </div>

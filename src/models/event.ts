@@ -8,8 +8,8 @@ export interface Event {
   roomId: number;
   owner: number;
   client: number[];
-  start_time: Date;
-  end_time: Date;
+  start: Date;
+  end: Date;
   image: string;
 }
 

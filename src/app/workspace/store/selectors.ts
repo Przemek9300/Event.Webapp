@@ -32,6 +32,10 @@ export const selectEventsByDate = createSelector(selectEvents, selectedDate, (ev
   events.filter(event => event.start_time === date)
 );
 
+export const selectEventsByRoomSelected = createSelector(selectEvents, selectedRoomId, (events, id) =>
+  events.filter(event => event.roomId === id)
+);
+
 // export const selectEventDetails = createSelector(
 //   selectEventById,
 //   selectRoomById,
