@@ -7,9 +7,9 @@ export interface Event {
   description: string;
   roomId: number;
   owner: number;
-  client: number[];
-  start: Date;
-  end: Date;
+  members: { id: number; emial: string; avatar: string; status: string }[];
+  start_time: Date;
+  end_time: Date;
   image: string;
 }
 
@@ -21,5 +21,5 @@ export interface EventDto {
   end: Date;
   image?: string;
   owner?: number;
-  clients: [];
+  members: [];
 }

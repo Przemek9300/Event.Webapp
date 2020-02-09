@@ -10,30 +10,18 @@
     fxLayoutAlign="space-around center"
     (submit)="submit()"
   >
-  <mat-error *ngIf="error">
-    {{error}}
-</mat-error>
+    <mat-error *ngIf="error">
+      {{ error }}
+    </mat-error>
     <mat-form-field class="field-width">
-      <input
-        type="text"
-        matInput
-        placeholder="Username"
-        value=""
-        formControlName="username"
-      />
+      <input id="username" type="username" type="text" matInput placeholder="Username" value="" formControlName="username" />
     </mat-form-field>
 
     <mat-form-field class="field-width">
-      <input
-        type="password"
-        matInput
-        placeholder="Password"
-        value=""
-        formControlName="password"
-      />
+      <input id="password" type="password" matInput placeholder="Password" value="" formControlName="password" />
     </mat-form-field>
   </form>
-  <button [disabled]="signin.invalid" type="submit" (click)="submit()" mat-stroked-button color="primary">
+  <button id="submit" [disabled]="signin.invalid" type="submit" (click)="submit()" mat-stroked-button color="primary">
     Submit
   </button>
 </div>

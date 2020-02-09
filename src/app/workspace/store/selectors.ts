@@ -25,8 +25,8 @@ export const selectEventById = createSelector(
   (state, id) => state.filter(x => x.id === id)[0]
 );
 export const selectEventRoom = createSelector(selectEventById, selectRoomById, (ev, room) => ({
-  ev: ev,
-  room: room
+  ev,
+  room
 }));
 export const selectEventsByDate = createSelector(selectEvents, selectedDate, (events, date) =>
   events.filter(event => event.start_time === date)

@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EventManagerComponent } from './event-manager.component';
+import { MaterialModule } from 'src/app/material/material.module';
+import { ChartModule } from 'primeng/chart';
+import { ListRoomComponent } from './components/list-room/list-room.component';
 
 describe('EventManagerComponent', () => {
   let component: EventManagerComponent;
@@ -8,9 +11,9 @@ describe('EventManagerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EventManagerComponent ]
-    })
-    .compileComponents();
+      declarations: [EventManagerComponent, ListRoomComponent],
+      imports: [MaterialModule, ChartModule]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

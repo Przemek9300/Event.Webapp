@@ -7,7 +7,9 @@ import {
   addEvent,
   addEventSuccess,
   addEventFail,
-  addParticipant
+  addParticipant,
+  addParticipantFail,
+  addParticipantSuccess
 } from './actions';
 import { mergeMap, map, catchError, switchMap } from 'rxjs/operators';
 import { EventService } from '../../services/event-service';
@@ -35,7 +37,7 @@ export class EventEffects {
       switchMap(action =>
         this.eventService.addEvent(action.event).pipe(
           map(
-            event => addEventSuccess({ event: event }),
+            event => addEventSuccess({ event }),
             catchError(error => {
               console.log(error);
               return of(addEventFail());
@@ -52,9 +54,9 @@ export class EventEffects {
       switchMap(action =>
         this.eventService.addParticipant(action.email, action.id).pipe(
           map(
-            event => addEventSuccess({ event: event }),
+            event => addParticipantSuccess({ id: event.id }),
             catchError(error => {
-              return of(addEventFail());
+              return of(addParticipantFail());
             })
           )
         )

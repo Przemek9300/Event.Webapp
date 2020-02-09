@@ -19,7 +19,10 @@ export class CardComponent implements OnInit {
   ngOnInit() {}
   public inviteClick(): void {
     const dialogRef = this.dialog.open(InviteFormComponent, {
-      width: '250px'
+      width: '250px',
+      data: {
+        id: this.event.id
+      }
     });
   }
 
