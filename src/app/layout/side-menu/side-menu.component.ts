@@ -23,8 +23,7 @@ export class SideMenuComponent implements OnInit {
     this.currentPath = this.router.url;
     this.items = [
       { label: 'Dashboard', class: [], link: '', icon: 'home' },
-      { label: 'Planning', class: [], link: 'planning', icon: 'assessment' },
-      { label: 'Dashboard', class: [], link: '', icon: 'home' }
+      { label: 'Planning', class: [], link: 'planning', icon: 'assessment' }
     ];
   }
 }

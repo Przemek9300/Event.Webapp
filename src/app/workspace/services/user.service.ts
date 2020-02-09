@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class UserService {
   public getUser(): Observable<User> {
-    return this.http.get<User>(environment.myUser);
+    return this.http.get<User>(environment.auth);
   }
   constructor(private http: HttpClient) {}
 }
