@@ -1,43 +1,19 @@
 <div fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="20">
   <h2>Sign up</h2>
 
-  <form
-    [formGroup]="signup"
-    class="form"
-    class="field-width"
-    fxLayout="column"
-    fxLayoutAlign="space-around center"
-  >
+  <form [formGroup]="signup" class="form" class="field-width" fxLayout="column" fxLayoutAlign="space-around center">
     <mat-error *ngIf="error">
       {{ error }}
     </mat-error>
     <mat-form-field class="field-width">
-      <input
-        type="text"
-        matInput
-        placeholder="Username"
-        value=""
-        formControlName="username"
-      />
+      <input type="text" matInput placeholder="Username" value="" formControlName="username" id="username" />
     </mat-form-field>
     <mat-form-field class="field-width">
-      <input
-        type="email"
-        matInput
-        placeholder="Email"
-        value=""
-        formControlName="email"
-      />
+      <input type="email" matInput placeholder="Email" value="" formControlName="email" id="email" />
     </mat-form-field>
 
     <mat-form-field class="field-width">
-      <input
-        type="password"
-        matInput
-        placeholder="Password"
-        value=""
-        formControlName="password"
-      />
+      <input type="password" matInput placeholder="Password" value="" formControlName="password" id="password" />
     </mat-form-field>
     <mat-form-field class="field-width">
       <input
@@ -46,16 +22,11 @@
         placeholder="Confirm password"
         value=""
         formControlName="confirmPassword"
+        id="confirmPassword"
       />
     </mat-form-field>
   </form>
-  <button
-    [disabled]="signup.invalid"
-    type="submit"
-    (click)="submit()"
-    mat-stroked-button
-    color="primary"
-  >
+  <button [disabled]="signup.invalid" type="submit" (click)="submit()" mat-stroked-button color="primary" id="submit">
     Submit
   </button>
 </div>

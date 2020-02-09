@@ -1,10 +1,10 @@
 <form fxLayout="column" fxLayoutAlign="space-evenly center" [formGroup]="basicFormGroup">
   <mat-form-field>
-    <input matInput placeholder="Email" formControlName="email" />
+    <input id="email" matInput placeholder="Email" formControlName="email" />
     <mat-error>Error</mat-error>
   </mat-form-field>
   <div>
-    <button [(disabled)]="basicFormGroup.invalid" mat-button (click)="sendInvitation()">
+    <button id="submit" [(disabled)]="basicFormGroup.invalid" mat-button (click)="sendInvitation()">
       <mat-icon>mail_outline</mat-icon>
     </button>
   </div>

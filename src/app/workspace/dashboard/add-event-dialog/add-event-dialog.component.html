@@ -3,29 +3,14 @@
     <form fxLayout="column" fxLayoutAlign="space-evenly center" [formGroup]="basicFormGroup">
       <ng-template matStepLabel>Let's Start</ng-template>
       <mat-form-field>
-        <input matInput placeholder="Title" formControlName="title" required />
+        <input id="title" matInput placeholder="Title" formControlName="title" required />
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Description" formControlName="description" />
+        <input id="description" matInput placeholder="Description" formControlName="description" />
       </mat-form-field>
 
-      <!-- <mat-form-field>
-        <input
-          matInput
-          #fileImage
-          hidden="true"
-          type="file"
-          onclick="this.value=null"
-          (change)="imageInputChange($event)"
-          accept=".png"
-          formControlName="image"
-        />
-        <button mat-flat-button color="primary" (click)="fileImage.click()">
-          Load image file
-        </button>
-      </mat-form-field> -->
       <div>
-        <button [(disabled)]="basicFormGroup.invalid" mat-button matStepperNext>Next</button>
+        <button id="next" [(disabled)]="basicFormGroup.invalid" mat-button matStepperNext>Next</button>
       </div>
     </form>
   </mat-step>
@@ -36,24 +21,24 @@
       <ng-template matStepLabel>Pick time and room</ng-template>
       <mat-form-field>
         <mat-label>List of available rooms</mat-label>
-        <mat-select formControlName="room">
-          <mat-option *ngFor="let room of rooms$ | async" [value]="room.id">
+        <mat-select id="select" formControlName="room">
+          <mat-option id="option" *ngFor="let room of rooms$ | async" [value]="room.id">
             {{ room.name }}
           </mat-option>
         </mat-select>
       </mat-form-field>
       <div formGroupName="date" [formGroup]="dateFormGroup" fxLayout="column" fxLayoutAlign="space-evenly center">
         <mat-form-field>
-          <input matInput type="datetime-local" placeholder="start date" formControlName="start" />
+          <input id="start" matInput type="datetime-local" placeholder="start date" formControlName="start" />
         </mat-form-field>
         <mat-form-field>
-          <input matInput type="datetime-local" placeholder="end date" formControlName="end" />
+          <input id="end" matInput type="datetime-local" placeholder="end date" formControlName="end" />
         </mat-form-field>
       </div>
 
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button id="next2" mat-button matStepperPrevious>Back</button>
+        <button id="back" mat-button matStepperNext>Next</button>
       </div>
     </form>
   </mat-step>
@@ -61,8 +46,8 @@
     <ng-template matStepLabel>Done</ng-template>
     Summary:
     <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="submit()">Add Event</button>
+      <button id="back2" mat-button matStepperPrevious>Back</button>
+      <button id="submit" mat-button (click)="submit()">Add Event</button>
     </div>
   </mat-step>
 </mat-horizontal-stepper>
