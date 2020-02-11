@@ -16,7 +16,6 @@
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged && ng lint  && ng test --watch false --browsers ChromeHeadless",
-      "pre-push": "ng build --aot true"
     }
   },
   "private": true,
