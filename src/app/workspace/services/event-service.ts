@@ -18,7 +18,7 @@ export class EventService {
     return this.http.post<Event>(environment.event, event);
   }
   public addParticipant(email: string, id: number): Observable<{ id: number; email: string }> {
-    return of({ id: id, email: email });
+    return of({ id, email });
   }
 
   constructor(private http: HttpClient) {}

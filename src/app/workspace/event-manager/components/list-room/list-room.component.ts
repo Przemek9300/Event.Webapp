@@ -14,7 +14,7 @@ export class ListRoomComponent implements OnInit {
   @Input() rooms$: Observable<Room[]>;
   constructor(private store: Store<WorkspaceState>) {}
   public select(id: number) {
-    this.store.dispatch(SelectRoom({ id: id }));
+    this.store.dispatch(SelectRoom({ id }));
   }
   ngOnInit() {}
 }

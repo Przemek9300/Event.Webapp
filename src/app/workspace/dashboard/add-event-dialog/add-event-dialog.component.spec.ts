@@ -1,28 +1,38 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+// import { Spectator, createComponentFactory } from '@ngneat/spectator';
+// import { AddEventDialogComponent } from './add-event-dialog.component';
+// import { MaterialModule } from 'src/app/material/material.module';
+// import { FormsModule, ReactiveFormsModule, FormGroup, FormBuilder } from '@angular/forms';
+// import { CalendaryComponent } from '../../event-manager/components/calendary/calendary.component';
+// import { FullCalendarModule } from '@fullcalendar/angular';
+// import { provideMockStore, MockStore } from '@ngrx/store/testing';
 
-import { AddEventDialogComponent } from './add-event-dialog.component';
-import { MaterialModule } from 'src/app/material/material.module';
-import { FormsModule } from '@angular/forms';
-import { FullCalendarModule } from '@fullcalendar/angular';
+// describe('AddEventDialogComponent', () => {
+//   let spectator: Spectator<AddEventDialogComponent>;
+//   const createComponent = createComponentFactory({
+//     component: AddEventDialogComponent,
+//     imports: [MaterialModule, FormsModule, ReactiveFormsModule, FullCalendarModule],
+//     declarations: [CalendaryComponent],
+//     providers: [provideMockStore({})]
+//   });
 
-describe('AddEventDialogComponent', () => {
-  let component: AddEventDialogComponent;
-  let fixture: ComponentFixture<AddEventDialogComponent>;
+//   beforeEach(() => (spectator = createComponent()));
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [AddEventDialogComponent],
-      imports: [MaterialModule, FormsModule, FullCalendarModule]
-    }).compileComponents();
-  }));
+//   it('AddEventDialogComponent', () => {
+//     const fb = new FormBuilder();
+//     spectator.component.dateFormGroup = fb.group({
+//       date: fb.group({
+//         start: [new Date(Date.now())],
+//         end: ['']
+//       }),
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AddEventDialogComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+//       room: ['']
+//     });
+//     spectator.component.basicFormGroup = fb.group({
+//       title: [''],
+//       description: ['']
+//     });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+//     spectator.detectChanges();
+//     expect(spectator.query('button')).toHaveClass('success');
+//   });
+// });

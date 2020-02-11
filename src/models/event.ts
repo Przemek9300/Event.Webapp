@@ -23,3 +23,16 @@ export interface EventDto {
   owner?: number;
   members: [];
 }
+
+export const mockedEvent: Event = {
+  id: 1,
+  url: '',
+  title: '',
+  description: '',
+  end_time: new Date(),
+  start_time: new Date(),
+  members: [{ avatar: '', emial: '', id: 1, status: '' }],
+  roomId: 1,
+  image: '',
+  owner: 1
+};

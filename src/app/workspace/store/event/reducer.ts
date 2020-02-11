@@ -41,16 +41,17 @@ export const reducer = createReducer(
 
   on(addParticipant, state => ({ ...state, isLoading: true })),
   on(addParticipantSuccess, (state, payload) => {
-    const event: Event = state.events.find(ev => ev.id == payload.id);
+    const event: Event = state.events.find(ev => ev.id === payload.id);
     return {
       ...state,
       isLoading: false,
       events: state.events.map(ev => {
-        if (ev === event)
+        if (ev === event) {
           return {
             ...event,
             members: [...event.members, { id: payload.id, emial: 'example.com', status: 'Invited', avatar: '' }]
           };
+        }
         return ev;
       })
     };

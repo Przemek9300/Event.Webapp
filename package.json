@@ -6,11 +6,18 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
+    "test with coverage": "ng test --browsers ChromeHeadless --code-coverage",
     "format:check": "prettier --config ./.prettierrc --list-different \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\"",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "fake": "json-server -p 5000 --watch --routes ./src/fake-backend/routes.json ./src/fake-backend/db.json",
     "format:fix": "pretty-quick "
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && ng lint  && ng test --browsers ChromeHeadless",
+      "pre-push": "ng build --aot true"
+    }
   },
   "private": true,
   "dependencies": {
@@ -50,6 +57,7 @@
     "@angular/cli": "~8.0.0",
     "@angular/compiler-cli": "~8.0.0",
     "@angular/language-service": "~8.0.0",
+    "@ngneat/spectator": "^4.11.1",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",

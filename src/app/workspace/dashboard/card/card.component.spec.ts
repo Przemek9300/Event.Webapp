@@ -1,27 +1,37 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Spectator, createComponentFactory } from '@ngneat/spectator';
 
 import { CardComponent } from './card.component';
+
 import { MaterialModule } from 'src/app/material/material.module';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { FullCalendarModule } from '@fullcalendar/angular';
+
 import { RouterModule } from '@angular/router';
 
+import { provideMockStore } from '@ngrx/store/testing';
+import { mockedEvent } from 'src/models/event';
+
 describe('CardComponent', () => {
-  let component: CardComponent;
-  let fixture: ComponentFixture<CardComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [CardComponent],
-      imports: [MaterialModule, RouterModule]
-    }).compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(CardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  let spectator: Spectator<CardComponent>;
+  const createComponent = createComponentFactory({
+    component: CardComponent,
+    imports: [MaterialModule, FormsModule, ReactiveFormsModule, FullCalendarModule, RouterModule.forRoot([])],
+    providers: [provideMockStore({})]
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  beforeEach(
+    () =>
+      (spectator = createComponent({
+        props: {
+          event: mockedEvent
+        }
+      }))
+  );
+
+  it('should have a success class by default', () => {
+    spectator.detectChanges();
+    expect(spectator.component).toBeDefined();
   });
 });
